@@ -82,78 +82,77 @@ class RocketInfoView: UIView {
         firstLaunchLabel.text = launchDate
         countryLabel.text = country
         launchCostValueLabel.text = "$\(cost) млн"
-        configurateSubviews()
+        setConstraints()
     }
     
-    private func configurateSubviews() {
+}
+
+// MARK: - SetConstraints
+
+extension RocketInfoView {
+    private func setConstraints() {
+        
+        // MARK: FirstLaucnhRowView
         self.addSubview(firstLaunchRowView)
-        self.addSubview(countryRowView)
-        self.addSubview(costRowView)
-        setupFirstLaunchRowView()
-        setupCountryRowView()
-        setupCostRowView()
-    }
-    
-    private func setupFirstLaunchRowView() {
-        firstLaunchRowView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        firstLaunchRowView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        firstLaunchRowView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        firstLaunchRowView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/3).isActive = true
+        NSLayoutConstraint.activate([
+            firstLaunchRowView.topAnchor.constraint(equalTo: self.topAnchor),
+            firstLaunchRowView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            firstLaunchRowView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            firstLaunchRowView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/3),
+        ])
+        
         firstLaunchRowView.addSubview(firstLaunchLabel)
+        NSLayoutConstraint.activate([
+            firstLaunchLabel.leadingAnchor.constraint(equalTo: firstLaunchRowView.leadingAnchor, constant: 10),
+            firstLaunchLabel.centerYAnchor.constraint(equalTo: firstLaunchRowView.centerYAnchor),
+        ])
+        
         firstLaunchRowView.addSubview(firstLaunchValueLabel)
-        setupFirstLaunchLabel()
-        setupFirstValueLaunchLabel()
-    }
-    
-    private func setupCountryRowView() {
-        countryRowView.topAnchor.constraint(equalTo: firstLaunchRowView.bottomAnchor).isActive = true
-        countryRowView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        countryRowView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        countryRowView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/3).isActive = true
+        NSLayoutConstraint.activate([
+            firstLaunchValueLabel.trailingAnchor.constraint(equalTo: firstLaunchRowView.trailingAnchor, constant: -10),
+            firstLaunchValueLabel.centerYAnchor.constraint(equalTo: firstLaunchRowView.centerYAnchor),
+        ])
+        
+        // MARK: CountryRowView
+        self.addSubview(countryRowView)
+        NSLayoutConstraint.activate([
+            countryRowView.topAnchor.constraint(equalTo: firstLaunchRowView.bottomAnchor),
+            countryRowView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            countryRowView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            countryRowView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/3),
+        ])
+        
         countryRowView.addSubview(countryLabel)
+        NSLayoutConstraint.activate([
+            countryLabel.leadingAnchor.constraint(equalTo: countryRowView.leadingAnchor, constant: 10),
+            countryLabel.centerYAnchor.constraint(equalTo: countryRowView.centerYAnchor),
+        ])
+        
         countryRowView.addSubview(countryValueLabel)
-        setupCountryLabel()
-        setupCountryValueLabel()
-    }
-    
-    private func setupCostRowView() {
-        costRowView.topAnchor.constraint(equalTo: countryRowView.bottomAnchor).isActive = true
-        costRowView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        costRowView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        costRowView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/3).isActive = true
+        NSLayoutConstraint.activate([
+            countryValueLabel.trailingAnchor.constraint(equalTo: countryRowView.trailingAnchor, constant: -10),
+            countryValueLabel.centerYAnchor.constraint(equalTo: countryRowView.centerYAnchor),
+        ])
+        
+        // MARK: CostRowView
+        self.addSubview(costRowView)
+        NSLayoutConstraint.activate([
+            costRowView.topAnchor.constraint(equalTo: countryRowView.bottomAnchor),
+            costRowView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            costRowView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            costRowView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/3),
+        ])
+        
         costRowView.addSubview(launchCostLabel)
+        NSLayoutConstraint.activate([
+            launchCostLabel.leadingAnchor.constraint(equalTo: costRowView.leadingAnchor, constant: 10),
+            launchCostLabel.centerYAnchor.constraint(equalTo: costRowView.centerYAnchor),
+        ])
+        
         costRowView.addSubview(launchCostValueLabel)
-        setupCostLabel()
-        setupCostValueLabel()
-    }
-    
-    private func setupFirstLaunchLabel() {
-        firstLaunchLabel.leadingAnchor.constraint(equalTo: firstLaunchRowView.leadingAnchor, constant: 10).isActive = true
-        firstLaunchLabel.centerYAnchor.constraint(equalTo: firstLaunchRowView.centerYAnchor).isActive = true
-    }
-    
-    private func setupFirstValueLaunchLabel() {
-        firstLaunchValueLabel.trailingAnchor.constraint(equalTo: firstLaunchRowView.trailingAnchor, constant: -10).isActive = true
-        firstLaunchValueLabel.centerYAnchor.constraint(equalTo: firstLaunchRowView.centerYAnchor).isActive = true
-    }
-    
-    private func setupCountryLabel() {
-        countryLabel.leadingAnchor.constraint(equalTo: countryRowView.leadingAnchor, constant: 10).isActive = true
-        countryLabel.centerYAnchor.constraint(equalTo: countryRowView.centerYAnchor).isActive = true
-    }
-    
-    private func setupCountryValueLabel() {
-        countryValueLabel.trailingAnchor.constraint(equalTo: countryRowView.trailingAnchor, constant: -10).isActive = true
-        countryValueLabel.centerYAnchor.constraint(equalTo: countryRowView.centerYAnchor).isActive = true
-    }
-    
-    private func setupCostLabel() {
-        launchCostLabel.leadingAnchor.constraint(equalTo: costRowView.leadingAnchor, constant: 10).isActive = true
-        launchCostLabel.centerYAnchor.constraint(equalTo: costRowView.centerYAnchor).isActive = true
-    }
-    
-    private func setupCostValueLabel() {
-        launchCostValueLabel.trailingAnchor.constraint(equalTo: costRowView.trailingAnchor, constant: -10).isActive = true
-        launchCostValueLabel.centerYAnchor.constraint(equalTo: costRowView.centerYAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            launchCostValueLabel.trailingAnchor.constraint(equalTo: costRowView.trailingAnchor, constant: -10),
+            launchCostValueLabel.centerYAnchor.constraint(equalTo: costRowView.centerYAnchor),
+        ])
     }
 }

@@ -51,9 +51,9 @@ class CustomCollectionViewCell: UICollectionViewCell {
 // MARK: - SetConstraints
 
 extension CustomCollectionViewCell {
-    func setConstraints() {
-        contentView.addSubview(roundedView)
+    private func setConstraints() {
         
+        contentView.addSubview(roundedView)
         NSLayoutConstraint.activate([
             roundedView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
             roundedView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
@@ -62,7 +62,6 @@ extension CustomCollectionViewCell {
         ])
         
         roundedView.addSubview(keyLabel)
-        
         NSLayoutConstraint.activate([
             keyLabel.topAnchor.constraint(equalTo: roundedView.centerYAnchor, constant: 0),
             keyLabel.leadingAnchor.constraint(equalTo: roundedView.leadingAnchor, constant: 10),
@@ -70,7 +69,6 @@ extension CustomCollectionViewCell {
         ])
         
         roundedView.addSubview(valueLabel)
-        
         NSLayoutConstraint.activate([
             valueLabel.bottomAnchor.constraint(equalTo: roundedView.centerYAnchor, constant: 0),
             valueLabel.centerXAnchor.constraint(equalTo: roundedView.centerXAnchor),
