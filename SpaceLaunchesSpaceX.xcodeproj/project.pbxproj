@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB29AEC7286C69D000E67CDF /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29AEC6286C69D000E67CDF /* CustomCollectionViewCell.swift */; };
+		BB29AEC9286CA4E600E67CDF /* RocketInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29AEC8286CA4E600E67CDF /* RocketInfoView.swift */; };
+		BB29AECB286CA77100E67CDF /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29AECA286CA77100E67CDF /* StageView.swift */; };
 		BB79E00A27E489F700043380 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB79E00927E489F700043380 /* AppDelegate.swift */; };
 		BB79E00C27E489F700043380 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB79E00B27E489F700043380 /* SceneDelegate.swift */; };
 		BB79E00E27E489F700043380 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB79E00D27E489F700043380 /* ViewController.swift */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB29AEC6286C69D000E67CDF /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		BB29AEC8286CA4E600E67CDF /* RocketInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketInfoView.swift; sourceTree = "<group>"; };
+		BB29AECA286CA77100E67CDF /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
 		BB79E00627E489F700043380 /* SpaceLaunchesSpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceLaunchesSpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB79E00927E489F700043380 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB79E00B27E489F700043380 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +66,9 @@
 				BB79E01227E489F800043380 /* Assets.xcassets */,
 				BB79E01427E489F800043380 /* LaunchScreen.storyboard */,
 				BB79E01727E489F800043380 /* Info.plist */,
+				BB29AEC6286C69D000E67CDF /* CustomCollectionViewCell.swift */,
+				BB29AEC8286CA4E600E67CDF /* RocketInfoView.swift */,
+				BB29AECA286CA77100E67CDF /* StageView.swift */,
 			);
 			path = SpaceLaunchesSpaceX;
 			sourceTree = "<group>";
@@ -135,8 +144,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB79E00E27E489F700043380 /* ViewController.swift in Sources */,
+				BB29AECB286CA77100E67CDF /* StageView.swift in Sources */,
 				BB79E00A27E489F700043380 /* AppDelegate.swift in Sources */,
+				BB29AEC9286CA4E600E67CDF /* RocketInfoView.swift in Sources */,
 				BB79E00C27E489F700043380 /* SceneDelegate.swift in Sources */,
+				BB29AEC7286C69D000E67CDF /* CustomCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
