@@ -139,82 +139,103 @@ class ViewController: UIViewController {
     }
     
     private func setupScrollView() {
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        scrollView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            scrollView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        ])
+        
     }
     
     private func setupHeaderView() {
-        headerView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        headerView.topAnchor.constraint(equalTo: rocketImageView.bottomAnchor, constant: -20).isActive = true
-        headerView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
-        headerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
-        headerView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        NSLayoutConstraint.activate([
+            headerView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            headerView.topAnchor.constraint(equalTo: rocketImageView.bottomAnchor, constant: -20),
+            headerView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            headerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            headerView.heightAnchor.constraint(equalToConstant: 100),
+        ])
         headerView.addSubview(rocketNameLabel)
         setupRocketNameLabel()
     }
     
     private func setupRocketImageView() {
-        rocketImageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        rocketImageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: -20).isActive = true
-        rocketImageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
-        rocketImageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
-        rocketImageView.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 1/3).isActive = true
+        NSLayoutConstraint.activate([
+            rocketImageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            rocketImageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: -20),
+            rocketImageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            rocketImageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            rocketImageView.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 1/3),
+        ])
     }
     
     private func setupRocketNameLabel() {
-        rocketNameLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor).isActive = true
-        rocketNameLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 30).isActive = true
-        rocketNameLabel.trailingAnchor.constraint(greaterThanOrEqualTo: headerView.trailingAnchor, constant: 20).isActive = true
+        NSLayoutConstraint.activate([
+            rocketNameLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
+            rocketNameLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 30),
+            rocketNameLabel.trailingAnchor.constraint(greaterThanOrEqualTo: headerView.trailingAnchor, constant: 20),
+        ])
     }
     
     private func setupCollectionView() {
-        collectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 0).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0).isActive = true
-        collectionView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 0),
+            collectionView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10),
+            collectionView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),
+            collectionView.heightAnchor.constraint(equalToConstant: 100),
+        ])
     }
     
     private func setupRocketInfoView() {
-        rocketInfoView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 20).isActive = true
-        rocketInfoView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10).isActive = true
-        rocketInfoView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -10).isActive = true
-        rocketInfoView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        NSLayoutConstraint.activate([
+            rocketInfoView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 20),
+            rocketInfoView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10),
+            rocketInfoView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -10),
+            rocketInfoView.heightAnchor.constraint(equalToConstant: 100),
+        ])
     }
     
     private func setupFirstStageView() {
-        firstStageView.topAnchor.constraint(equalTo: rocketInfoView.bottomAnchor, constant: 20).isActive = true
-        firstStageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10).isActive = true
-        firstStageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -10).isActive = true
-        firstStageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        NSLayoutConstraint.activate([
+            firstStageView.topAnchor.constraint(equalTo: rocketInfoView.bottomAnchor, constant: 20),
+            firstStageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10),
+            firstStageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -10),
+            firstStageView.heightAnchor.constraint(equalToConstant: 150),
+        ])
     }
     
     private func setupSecondStageView() {
-        secondStageView.topAnchor.constraint(equalTo: firstStageView.bottomAnchor, constant: 20).isActive = true
-        secondStageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10).isActive = true
-        secondStageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -10).isActive = true
-        secondStageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        NSLayoutConstraint.activate([
+            secondStageView.topAnchor.constraint(equalTo: firstStageView.bottomAnchor, constant: 20),
+            secondStageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10),
+            secondStageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -10),
+            secondStageView.heightAnchor.constraint(equalToConstant: 150),
+        ])
     }
     
     private func setupPageControl() {
-        pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        pageControl.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        pageControl.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        pageControl.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            pageControl.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            pageControl.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            pageControl.heightAnchor.constraint(equalToConstant: 100),
+            pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        ])
         
     }
     
     private func setupLaunchesButton() {
-        launchesButton.topAnchor.constraint(equalTo: secondStageView.bottomAnchor, constant: 40).isActive = true
-        launchesButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        launchesButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20).isActive = true
-        launchesButton.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20).isActive = true
-        launchesButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        launchesButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -120).isActive = true
+        NSLayoutConstraint.activate([
+            launchesButton.topAnchor.constraint(equalTo: secondStageView.bottomAnchor, constant: 40),
+            launchesButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            launchesButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            launchesButton.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            launchesButton.heightAnchor.constraint(equalToConstant: 50),
+            launchesButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -120),
+        ])
     }
     
 }

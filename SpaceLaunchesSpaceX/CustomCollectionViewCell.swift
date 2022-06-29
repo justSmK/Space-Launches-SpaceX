@@ -40,38 +40,40 @@ class CustomCollectionViewCell: UICollectionViewCell {
     func configurateCell(value: String, key: String) {
         valueLabel.text = "\(value)"
         keyLabel.text = key
-        configurateSubviews()
+        setConstraints()
     }
     
-    private func configurateSubviews() {
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//    }
+}
+
+// MARK: - SetConstraints
+
+extension CustomCollectionViewCell {
+    func setConstraints() {
         contentView.addSubview(roundedView)
+        
+        NSLayoutConstraint.activate([
+            roundedView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
+            roundedView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
+            roundedView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
+            roundedView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
+        ])
+        
         roundedView.addSubview(keyLabel)
+        
+        NSLayoutConstraint.activate([
+            keyLabel.topAnchor.constraint(equalTo: roundedView.centerYAnchor, constant: 0),
+            keyLabel.leadingAnchor.constraint(equalTo: roundedView.leadingAnchor, constant: 10),
+            keyLabel.trailingAnchor.constraint(equalTo: roundedView.trailingAnchor, constant: -10),
+        ])
+        
         roundedView.addSubview(valueLabel)
         
-        setupValueLabel()
-        setupKeyLabel()
-        setupRoundedLabel()
-    }
-    
-    private func setupValueLabel() {
-        valueLabel.bottomAnchor.constraint(equalTo: roundedView.centerYAnchor, constant: 0).isActive = true
-        valueLabel.centerXAnchor.constraint(equalTo: roundedView.centerXAnchor).isActive = true
-    }
-    
-    private func setupKeyLabel() {
-        keyLabel.topAnchor.constraint(equalTo: roundedView.centerYAnchor, constant: 0).isActive = true
-        keyLabel.leadingAnchor.constraint(equalTo: roundedView.leadingAnchor, constant: 10).isActive = true
-        keyLabel.trailingAnchor.constraint(equalTo: roundedView.trailingAnchor, constant: -10).isActive = true
-    }
-    
-    private func setupRoundedLabel() {
-        roundedView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
-        roundedView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0).isActive = true
-        roundedView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
-        roundedView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
+        NSLayoutConstraint.activate([
+            valueLabel.bottomAnchor.constraint(equalTo: roundedView.centerYAnchor, constant: 0),
+            valueLabel.centerXAnchor.constraint(equalTo: roundedView.centerXAnchor),
+        ])
     }
 }
