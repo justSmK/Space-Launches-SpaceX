@@ -110,117 +110,114 @@ class StageView: UIView {
         return view
     }()
     
-    // MARK: - Public methods
-    
     func configurate(header: String, enginesCount: String, fuelMass: String, burnTime: String) {
         headerLabel.text = header
         enginesValueLabel.text = enginesCount
         massOfFuelValueLabel.text = fuelMass
         burnTimeValueLabel.text = burnTime
+        setConstraints()
+    }
+
+}
+
+// MARK: - SetConstraints
+
+extension StageView {
+    private func setConstraints() {
         
+        // MARK: FirstLaucnhRowView
         self.addSubview(headerRowView)
+        NSLayoutConstraint.activate([
+            headerRowView.topAnchor.constraint(equalTo: self.topAnchor),
+            headerRowView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            headerRowView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            headerRowView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/4),
+        ])
+        
+        headerRowView.addSubview(headerLabel)
+        NSLayoutConstraint.activate([
+            headerLabel.leadingAnchor.constraint(equalTo: headerRowView.leadingAnchor, constant: 10),
+            headerLabel.trailingAnchor.constraint(greaterThanOrEqualTo: headerRowView.trailingAnchor, constant: 10),
+            headerLabel.centerYAnchor.constraint(equalTo: headerRowView.centerYAnchor),
+        ])
+        
+        // MARK: EnginesRowView
         self.addSubview(enginesRowView)
+        NSLayoutConstraint.activate([
+            enginesRowView.topAnchor.constraint(equalTo: headerRowView.bottomAnchor),
+            enginesRowView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            enginesRowView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            enginesRowView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/4),
+        ])
+        
+        enginesRowView.addSubview(enginesLabel)
+        NSLayoutConstraint.activate([
+            enginesLabel.leadingAnchor.constraint(equalTo: enginesRowView.leadingAnchor, constant: 10),
+            // enginesLabel.trailingAnchor.constraint(greaterThanOrEqualTo: enginesValueLabel.leadingAnchor, constant: 10),
+            enginesLabel.centerYAnchor.constraint(equalTo: enginesRowView.centerYAnchor),
+        ])
+        
+        enginesRowView.addSubview(enginesValueLabel)
+        NSLayoutConstraint.activate([
+            enginesValueLabel.trailingAnchor.constraint(equalTo: enginesRowView.trailingAnchor, constant: -10),
+            enginesValueLabel.centerYAnchor.constraint(equalTo: enginesRowView.centerYAnchor),
+        ])
+        
+        // MARK: MassFuelRowView
         self.addSubview(massFuelRowView)
+        NSLayoutConstraint.activate([
+            massFuelRowView.topAnchor.constraint(equalTo: enginesRowView.bottomAnchor),
+            massFuelRowView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            massFuelRowView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            massFuelRowView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/4),
+        ])
+        
+        massFuelRowView.addSubview(massOfFuelLabel)
+        NSLayoutConstraint.activate([
+            massOfFuelLabel.leadingAnchor.constraint(equalTo: massFuelRowView.leadingAnchor, constant: 10),
+            massOfFuelLabel.centerYAnchor.constraint(equalTo: massFuelRowView.centerYAnchor),
+        ])
+        
+        massFuelRowView.addSubview(tonsLabel)
+        NSLayoutConstraint.activate([
+            tonsLabel.trailingAnchor.constraint(equalTo: massFuelRowView.trailingAnchor, constant: -10),
+            tonsLabel.centerYAnchor.constraint(equalTo: massFuelRowView.centerYAnchor),
+        ])
+        
+        massFuelRowView.addSubview(massOfFuelValueLabel)
+        NSLayoutConstraint.activate([
+            massOfFuelValueLabel.trailingAnchor.constraint(equalTo: tonsLabel.leadingAnchor, constant: -5),
+            massOfFuelValueLabel.centerYAnchor.constraint(equalTo: massFuelRowView.centerYAnchor),
+        ])
+        
+        
+        // MARK: BurnFuelRowView
         self.addSubview(burnFuelRowView)
-        setupHeaderRowView()
-        setupEnginesRowView()
-        setupMassFuelRowView()
-        setupBurnFuelRowView()
+        NSLayoutConstraint.activate([
+            burnFuelRowView.topAnchor.constraint(equalTo: massFuelRowView.bottomAnchor),
+            burnFuelRowView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            burnFuelRowView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            burnFuelRowView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/4),
+        ])
+        
+        burnFuelRowView.addSubview(burnTimeLabel)
+        NSLayoutConstraint.activate([
+            burnTimeLabel.leadingAnchor.constraint(equalTo: burnFuelRowView.leadingAnchor, constant: 10),
+            burnTimeLabel.centerYAnchor.constraint(equalTo: burnFuelRowView.centerYAnchor),
+        ])
+        
+        burnFuelRowView.addSubview(secLabel)
+        NSLayoutConstraint.activate([
+            secLabel.trailingAnchor.constraint(equalTo: burnFuelRowView.trailingAnchor, constant: -10),
+            secLabel.centerYAnchor.constraint(equalTo: burnFuelRowView.centerYAnchor),
+        ])
+        
+        burnFuelRowView.addSubview(burnTimeValueLabel)
+        NSLayoutConstraint.activate([
+            burnTimeValueLabel.trailingAnchor.constraint(equalTo: secLabel.leadingAnchor, constant: -5),
+            burnTimeValueLabel.centerYAnchor.constraint(equalTo: burnFuelRowView.centerYAnchor),
+        ])
         
     }
     
-    // MARK: - Private methods
-    
-    private func setupHeaderRowView() {
-        headerRowView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        headerRowView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        headerRowView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        headerRowView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/4).isActive = true
-        headerRowView.addSubview(headerLabel)
-        setupHeaderLabel()
-    }
-    
-    private func setupEnginesRowView() {
-        enginesRowView.topAnchor.constraint(equalTo: headerRowView.bottomAnchor).isActive = true
-        enginesRowView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        enginesRowView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        enginesRowView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/4).isActive = true
-        enginesRowView.addSubview(enginesLabel)
-        enginesRowView.addSubview(enginesValueLabel)
-        setupEnginesLabel()
-        setupEnginesValueLabel()
-    }
-    
-    private func setupMassFuelRowView() {
-        massFuelRowView.topAnchor.constraint(equalTo: enginesRowView.bottomAnchor).isActive = true
-        massFuelRowView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        massFuelRowView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        massFuelRowView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/4).isActive = true
-        massFuelRowView.addSubview(massOfFuelLabel)
-        massFuelRowView.addSubview(massOfFuelValueLabel)
-        massFuelRowView.addSubview(tonsLabel)
-        setupMassOfFuelLabel()
-        setupMassOfFuelValueLabel()
-        setupTonsLabel()
-    }
-    
-    private func setupBurnFuelRowView() {
-        burnFuelRowView.topAnchor.constraint(equalTo: massFuelRowView.bottomAnchor).isActive = true
-        burnFuelRowView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        burnFuelRowView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        burnFuelRowView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/4).isActive = true
-        burnFuelRowView.addSubview(burnTimeLabel)
-        burnFuelRowView.addSubview(burnTimeValueLabel)
-        burnFuelRowView.addSubview(secLabel)
-        setupBurnTimeLabel()
-        setupBurnTimeValueLabel()
-        setupSecLabel()
-    }
-    
-    private func setupHeaderLabel() {
-        headerLabel.leadingAnchor.constraint(equalTo: headerRowView.leadingAnchor, constant: 10).isActive = true
-        headerLabel.trailingAnchor.constraint(greaterThanOrEqualTo: headerRowView.trailingAnchor, constant: 10).isActive = true
-        headerLabel.centerYAnchor.constraint(equalTo: headerRowView.centerYAnchor).isActive = true
-    }
-    
-    private func setupEnginesLabel() {
-        enginesLabel.leadingAnchor.constraint(equalTo: enginesRowView.leadingAnchor, constant: 10).isActive = true
-        // enginesLabel.trailingAnchor.constraint(greaterThanOrEqualTo: enginesValueLabel.leadingAnchor, constant: 10).isActive = true
-        enginesLabel.centerYAnchor.constraint(equalTo: enginesRowView.centerYAnchor).isActive = true
-    }
-    
-    private func setupMassOfFuelLabel() {
-        massOfFuelLabel.leadingAnchor.constraint(equalTo: massFuelRowView.leadingAnchor, constant: 10).isActive = true
-        massOfFuelLabel.centerYAnchor.constraint(equalTo: massFuelRowView.centerYAnchor).isActive = true
-    }
-    
-    private func setupBurnTimeLabel() {
-        burnTimeLabel.leadingAnchor.constraint(equalTo: burnFuelRowView.leadingAnchor, constant: 10).isActive = true
-        burnTimeLabel.centerYAnchor.constraint(equalTo: burnFuelRowView.centerYAnchor).isActive = true
-    }
-    
-    private func setupTonsLabel() {
-        tonsLabel.trailingAnchor.constraint(equalTo: massFuelRowView.trailingAnchor, constant: -10).isActive = true
-        tonsLabel.centerYAnchor.constraint(equalTo: massFuelRowView.centerYAnchor).isActive = true
-    }
-    
-    private func setupSecLabel() {
-        secLabel.trailingAnchor.constraint(equalTo: burnFuelRowView.trailingAnchor, constant: -10).isActive = true
-        secLabel.centerYAnchor.constraint(equalTo: burnFuelRowView.centerYAnchor).isActive = true
-    }
-    
-    private func setupEnginesValueLabel() {
-        enginesValueLabel.trailingAnchor.constraint(equalTo: enginesRowView.trailingAnchor, constant: -10).isActive = true
-        enginesValueLabel.centerYAnchor.constraint(equalTo: enginesRowView.centerYAnchor).isActive = true
-    }
-    
-    private func setupMassOfFuelValueLabel() {
-        massOfFuelValueLabel.trailingAnchor.constraint(equalTo: tonsLabel.leadingAnchor, constant: -5).isActive = true
-        massOfFuelValueLabel.centerYAnchor.constraint(equalTo: massFuelRowView.centerYAnchor).isActive = true
-    }
-    
-    private func setupBurnTimeValueLabel() {
-        burnTimeValueLabel.trailingAnchor.constraint(equalTo: secLabel.leadingAnchor, constant: -5).isActive = true
-        burnTimeValueLabel.centerYAnchor.constraint(equalTo: burnFuelRowView.centerYAnchor).isActive = true
-    }
 }
