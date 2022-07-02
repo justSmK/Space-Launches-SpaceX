@@ -105,7 +105,7 @@ class ViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        configurateSubviews()
+        setConstraints()
         fillData()
     }
     
@@ -113,32 +113,15 @@ class ViewController: UIViewController {
     private func fillData() {
         rocketInfoView.configurate(launchDate: "10 февраля, 2020", country: "США", cost: "100")
         firstStageView.configurate(header: "Первая ступень", enginesCount: "9", fuelMass: "20", burnTime: "120")
-        secondStageView.configurate(header: "Первая ступень", enginesCount: "9", fuelMass: "20", burnTime: "120")
+        secondStageView.configurate(header: "Вторая ступень", enginesCount: "90", fuelMass: "200", burnTime: "1200")
     }
-    
-    private func configurateSubviews() {
-        view.addSubview(scrollView)
-        setupScrollView()
-        scrollView.addSubview(rocketImageView)
-        setupRocketImageView()
-        scrollView.addSubview(headerView)
-        setupHeaderView()
-        scrollView.addSubview(collectionView)
-        setupCollectionView()
-        scrollView.addSubview(rocketInfoView)
-        setupRocketInfoView()
-        scrollView.addSubview(firstStageView)
-        setupFirstStageView()
-        scrollView.addSubview(secondStageView)
-        setupSecondStageView()
-        scrollView.addSubview(launchesButton)
-        setupLaunchesButton()
+}
+
+// MARK: - SetConstraints
+extension ViewController {
+    private func setConstraints() {
         
-        view.addSubview(pageControl)
-        setupPageControl()
-    }
-    
-    private func setupScrollView() {
+        view.addSubview(scrollView)
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -148,21 +131,7 @@ class ViewController: UIViewController {
             scrollView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
         
-    }
-    
-    private func setupHeaderView() {
-        NSLayoutConstraint.activate([
-            headerView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            headerView.topAnchor.constraint(equalTo: rocketImageView.bottomAnchor, constant: -20),
-            headerView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            headerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 100),
-        ])
-        headerView.addSubview(rocketNameLabel)
-        setupRocketNameLabel()
-    }
-    
-    private func setupRocketImageView() {
+        scrollView.addSubview(rocketImageView)
         NSLayoutConstraint.activate([
             rocketImageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             rocketImageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: -20),
@@ -170,53 +139,70 @@ class ViewController: UIViewController {
             rocketImageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             rocketImageView.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 1/3),
         ])
-    }
-    
-    private func setupRocketNameLabel() {
+        
+        // MARK: - HeaderView
+        scrollView.addSubview(headerView)
+        NSLayoutConstraint.activate([
+            headerView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            headerView.topAnchor.constraint(equalTo: rocketImageView.bottomAnchor, constant: -20),
+            headerView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            headerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            headerView.heightAnchor.constraint(equalToConstant: 100),
+        ])
+        
+        headerView.addSubview(rocketNameLabel)
         NSLayoutConstraint.activate([
             rocketNameLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
             rocketNameLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 30),
             rocketNameLabel.trailingAnchor.constraint(greaterThanOrEqualTo: headerView.trailingAnchor, constant: 20),
         ])
-    }
-    
-    private func setupCollectionView() {
+        
+        // MARK: -
+        
+        scrollView.addSubview(collectionView)
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 0),
             collectionView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10),
             collectionView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),
             collectionView.heightAnchor.constraint(equalToConstant: 100),
         ])
-    }
-    
-    private func setupRocketInfoView() {
+        
+        scrollView.addSubview(rocketInfoView)
         NSLayoutConstraint.activate([
             rocketInfoView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 20),
             rocketInfoView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10),
             rocketInfoView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -10),
             rocketInfoView.heightAnchor.constraint(equalToConstant: 100),
         ])
-    }
-    
-    private func setupFirstStageView() {
+        
+        scrollView.addSubview(firstStageView)
         NSLayoutConstraint.activate([
             firstStageView.topAnchor.constraint(equalTo: rocketInfoView.bottomAnchor, constant: 20),
             firstStageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10),
             firstStageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -10),
             firstStageView.heightAnchor.constraint(equalToConstant: 150),
         ])
-    }
-    
-    private func setupSecondStageView() {
+        
+        scrollView.addSubview(secondStageView)
         NSLayoutConstraint.activate([
             secondStageView.topAnchor.constraint(equalTo: firstStageView.bottomAnchor, constant: 20),
             secondStageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10),
             secondStageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -10),
             secondStageView.heightAnchor.constraint(equalToConstant: 150),
         ])
-    }
-    
-    private func setupPageControl() {
+        
+        scrollView.addSubview(launchesButton)
+        NSLayoutConstraint.activate([
+            launchesButton.topAnchor.constraint(equalTo: secondStageView.bottomAnchor, constant: 40),
+            launchesButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            launchesButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            launchesButton.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            launchesButton.heightAnchor.constraint(equalToConstant: 50),
+            launchesButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -120),
+        ])
+        
+        
+        view.addSubview(pageControl)
         NSLayoutConstraint.activate([
             pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             pageControl.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -226,19 +212,9 @@ class ViewController: UIViewController {
         ])
         
     }
-    
-    private func setupLaunchesButton() {
-        NSLayoutConstraint.activate([
-            launchesButton.topAnchor.constraint(equalTo: secondStageView.bottomAnchor, constant: 40),
-            launchesButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            launchesButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
-            launchesButton.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
-            launchesButton.heightAnchor.constraint(equalToConstant: 50),
-            launchesButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -120),
-        ])
-    }
-    
 }
+
+// TODO: - Set Sign
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
