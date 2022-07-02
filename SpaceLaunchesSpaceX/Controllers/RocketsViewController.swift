@@ -11,7 +11,7 @@ class RocketsViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var scrollView: UIScrollView = {
+    private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.isUserInteractionEnabled = true
@@ -20,14 +20,14 @@ class RocketsViewController: UIViewController {
         return scrollView
     }()
     
-    private var rocketImageView: UIImageView = {
+    private lazy var rocketImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .white
         return imageView
     }()
     
-    private var headerView: UIView = {
+    private lazy var headerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .black
@@ -35,7 +35,7 @@ class RocketsViewController: UIViewController {
         return view
     }()
     
-    private var rocketNameLabel: UILabel = {
+    private lazy var rocketNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 24, weight: .medium)
@@ -44,7 +44,7 @@ class RocketsViewController: UIViewController {
         return label
     }()
     
-    private var collectionView: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         layout.itemSize = CGSize(width: 100, height: 90)
@@ -55,40 +55,42 @@ class RocketsViewController: UIViewController {
         return collectionView
     }()
     
-    private var rocketInfoView: RocketInfoView = {
+    private lazy var rocketInfoView: RocketInfoView = {
         let view = RocketInfoView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private var firstStageView: StageView = {
+    private lazy var firstStageView: StageView = {
         let view = StageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private var secondStageView: StageView = {
+    private lazy var secondStageView: StageView = {
         let view = StageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private var launchesButton: UIButton = {
+    private lazy var launchesButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = #colorLiteral(red: 0.1058690324, green: 0.1058908626, blue: 0.105864279, alpha: 1)
         button.setTitle("Посмотреть запуски", for: .normal)
         button.tintColor = .white
         button.layer.cornerRadius = 15
-        button.addTarget(RocketsViewController.self, action: #selector(launchesButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(launchesButtonAction), for: .touchUpInside)
         return button
     }()
     
     @objc private func launchesButtonAction() {
-        
+        let launchesViewController = LaunchesViewController()
+        navigationController?.pushViewController(launchesViewController, animated: true)
+        print("Tap")
     }
     
-    private var pageControl: UIPageControl = {
+    private lazy var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.numberOfPages = 2
         pageControl.translatesAutoresizingMaskIntoConstraints = false
@@ -105,8 +107,22 @@ class RocketsViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        configurateNavigationBar()
+        
         setConstraints()
         fillData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     
@@ -114,6 +130,16 @@ class RocketsViewController: UIViewController {
         rocketInfoView.configurate(launchDate: "10 февраля, 2020", country: "США", cost: "100")
         firstStageView.configurate(header: "Первая ступень", enginesCount: "9", fuelMass: "20", burnTime: "120")
         secondStageView.configurate(header: "Вторая ступень", enginesCount: "90", fuelMass: "200", burnTime: "1200")
+    }
+    
+    private func configurateNavigationBar() {
+        let backButton = UIBarButtonItem()
+        backButton.title = "Назад"
+        backButton.tintColor = .white
+        
+        navigationController?.navigationBar.barTintColor = .blue
+        navigationController?.navigationBar.isTranslucent = false
+        navigationItem.backBarButtonItem = backButton
     }
 }
 
@@ -151,7 +177,7 @@ extension RocketsViewController {
         scrollView.addSubview(rocketImageView)
         NSLayoutConstraint.activate([
             rocketImageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            rocketImageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: -20),
+            rocketImageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: -50),
             rocketImageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             rocketImageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             rocketImageView.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 1/3),

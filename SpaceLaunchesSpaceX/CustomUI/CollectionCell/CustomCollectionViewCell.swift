@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class CustomCollectionViewCell: UICollectionViewCell {
-    private var roundedView: UIView = {
+    private lazy var roundedView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 32
         view.backgroundColor = #colorLiteral(red: 0.1058690324, green: 0.1058908626, blue: 0.105864279, alpha: 1)
@@ -18,7 +18,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    private var valueLabel: UILabel = {
+    private lazy var valueLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 15)
@@ -28,7 +28,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private var keyLabel: UILabel = {
+    private lazy var keyLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 12)

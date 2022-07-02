@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class RocketInfoView: UIView {
-    private var firstLaunchLabel: UILabel = {
+    private lazy var firstLaunchLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
@@ -18,7 +18,7 @@ class RocketInfoView: UIView {
         return label
     }()
     
-    private var countryLabel: UILabel = {
+    private lazy var countryLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
@@ -27,7 +27,7 @@ class RocketInfoView: UIView {
         return label
     }()
     
-    private var launchCostLabel: UILabel = {
+    private lazy var launchCostLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
@@ -36,7 +36,7 @@ class RocketInfoView: UIView {
         return label
     }()
     
-    private var firstLaunchValueLabel: UILabel = {
+    private lazy var firstLaunchValueLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
@@ -44,7 +44,7 @@ class RocketInfoView: UIView {
         return label
     }()
     
-    private var countryValueLabel: UILabel = {
+    private lazy var countryValueLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
@@ -52,7 +52,7 @@ class RocketInfoView: UIView {
         return label
     }()
     
-    private var launchCostValueLabel: UILabel = {
+    private lazy var launchCostValueLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
@@ -60,19 +60,19 @@ class RocketInfoView: UIView {
         return label
     }()
     
-    private var firstLaunchRowView: UIView = {
+    private lazy var firstLaunchRowView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private var countryRowView: UIView = {
+    private lazy var countryRowView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private var costRowView: UIView = {
+    private lazy var costRowView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
