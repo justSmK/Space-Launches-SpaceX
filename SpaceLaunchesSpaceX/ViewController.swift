@@ -214,7 +214,7 @@ extension ViewController {
     }
 }
 
-// TODO: - Set Sign
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
