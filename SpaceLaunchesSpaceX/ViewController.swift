@@ -117,6 +117,23 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
+
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        guard let custom = cell as? CustomCollectionViewCell else {
+            return cell
+        }
+        custom.configurateCell(value: "123456789", key: "aaa")
+        return custom
+    }
+}
+
 // MARK: - SetConstraints
 extension ViewController {
     private func setConstraints() {
@@ -211,22 +228,5 @@ extension ViewController {
             pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
         
-    }
-}
-
-// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
-
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-        guard let custom = cell as? CustomCollectionViewCell else {
-            return cell
-        }
-        custom.configurateCell(value: "123456789", key: "aaa")
-        return custom
     }
 }
