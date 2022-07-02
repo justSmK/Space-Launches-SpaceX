@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RocketsViewController.swift
 //  SpaceLaunchesSpaceX
 //
 //  Created by justSmK on 18.03.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RocketsViewController: UIViewController {
     
     // MARK: - Properties
     
@@ -80,7 +80,7 @@ class ViewController: UIViewController {
         button.setTitle("Посмотреть запуски", for: .normal)
         button.tintColor = .white
         button.layer.cornerRadius = 15
-        button.addTarget(self, action: #selector(launchesButtonAction), for: .touchUpInside)
+        button.addTarget(RocketsViewController.self, action: #selector(launchesButtonAction), for: .touchUpInside)
         return button
     }()
     
@@ -119,7 +119,7 @@ class ViewController: UIViewController {
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension RocketsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 6
     }
@@ -135,7 +135,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 }
 
 // MARK: - SetConstraints
-extension ViewController {
+extension RocketsViewController {
     private func setConstraints() {
         
         view.addSubview(scrollView)

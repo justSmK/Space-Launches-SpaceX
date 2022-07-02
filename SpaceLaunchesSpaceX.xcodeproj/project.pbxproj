@@ -12,7 +12,7 @@
 		BB29AECB286CA77100E67CDF /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29AECA286CA77100E67CDF /* StageView.swift */; };
 		BB79E00A27E489F700043380 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB79E00927E489F700043380 /* AppDelegate.swift */; };
 		BB79E00C27E489F700043380 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB79E00B27E489F700043380 /* SceneDelegate.swift */; };
-		BB79E00E27E489F700043380 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB79E00D27E489F700043380 /* ViewController.swift */; };
+		BB79E00E27E489F700043380 /* RocketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB79E00D27E489F700043380 /* RocketsViewController.swift */; };
 		BB79E01327E489F800043380 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB79E01227E489F800043380 /* Assets.xcassets */; };
 		BB79E01627E489F800043380 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB79E01427E489F800043380 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -24,7 +24,7 @@
 		BB79E00627E489F700043380 /* SpaceLaunchesSpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceLaunchesSpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB79E00927E489F700043380 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB79E00B27E489F700043380 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BB79E00D27E489F700043380 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BB79E00D27E489F700043380 /* RocketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsViewController.swift; sourceTree = "<group>"; };
 		BB79E01227E489F800043380 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB79E01527E489F800043380 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB79E01727E489F800043380 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,15 +62,39 @@
 			children = (
 				BB79E00927E489F700043380 /* AppDelegate.swift */,
 				BB79E00B27E489F700043380 /* SceneDelegate.swift */,
-				BB79E00D27E489F700043380 /* ViewController.swift */,
-				BB79E01227E489F800043380 /* Assets.xcassets */,
+				BBBA135128702AAD000E4FC2 /* Controllers */,
+				BBBA134F28702A60000E4FC2 /* CustomUI */,
 				BB79E01427E489F800043380 /* LaunchScreen.storyboard */,
+				BB79E01227E489F800043380 /* Assets.xcassets */,
 				BB79E01727E489F800043380 /* Info.plist */,
-				BB29AEC6286C69D000E67CDF /* CustomCollectionViewCell.swift */,
+			);
+			path = SpaceLaunchesSpaceX;
+			sourceTree = "<group>";
+		};
+		BBBA134F28702A60000E4FC2 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				BBBA135028702A7C000E4FC2 /* CollectionCell */,
 				BB29AEC8286CA4E600E67CDF /* RocketInfoView.swift */,
 				BB29AECA286CA77100E67CDF /* StageView.swift */,
 			);
-			path = SpaceLaunchesSpaceX;
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		BBBA135028702A7C000E4FC2 /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				BB29AEC6286C69D000E67CDF /* CustomCollectionViewCell.swift */,
+			);
+			path = CollectionCell;
+			sourceTree = "<group>";
+		};
+		BBBA135128702AAD000E4FC2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BB79E00D27E489F700043380 /* RocketsViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB79E00E27E489F700043380 /* ViewController.swift in Sources */,
+				BB79E00E27E489F700043380 /* RocketsViewController.swift in Sources */,
 				BB29AECB286CA77100E67CDF /* StageView.swift in Sources */,
 				BB79E00A27E489F700043380 /* AppDelegate.swift in Sources */,
 				BB29AEC9286CA4E600E67CDF /* RocketInfoView.swift in Sources */,
