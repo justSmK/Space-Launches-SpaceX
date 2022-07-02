@@ -57,9 +57,9 @@ extension LaunchesViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         if indexPath.row == 1 {
-            launchCell.configurate(name: "Aaa", date: "02 июля, 2022", isSuccess: false)
+            launchCell.configurate(name: "Fall", date: "02 июля, 2022", isSuccess: false)
         } else {
-            launchCell.configurate(name: "Bbb", date: "02 июля, 2022", isSuccess: true)
+            launchCell.configurate(name: "Success", date: "02 июля, 2022", isSuccess: true)
         }
         return cell
     }
