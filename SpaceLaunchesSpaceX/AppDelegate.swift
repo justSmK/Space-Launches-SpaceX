@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController(rootViewController: rocketsViewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        print("Hello World")
         
         return true
     }

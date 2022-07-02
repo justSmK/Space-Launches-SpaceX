@@ -28,6 +28,13 @@ class LaunchesViewController: UIViewController {
         launchesTableView.delegate = self
         launchesTableView.dataSource = self
         view.backgroundColor = .blue
+        setConstraints()
+    }
+    
+}
+
+extension LaunchesViewController {
+    private func setConstraints() {
         view.addSubview(launchesTableView)
         NSLayoutConstraint.activate([
             launchesTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
@@ -35,21 +42,6 @@ class LaunchesViewController: UIViewController {
             launchesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             launchesTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
         ])
-        
-    }
-    
-}
-
-extension LaunchesTableViewCell {
-    private func setConstraints() {
-        
-//        self.addSubview(launchesTableView)
-//        NSLayoutConstraint.activate([
-//            launchesTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
-//            launchesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-//            launchesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-//            launchesTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
-//        ])
     }
 }
 

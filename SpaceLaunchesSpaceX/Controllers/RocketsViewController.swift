@@ -137,7 +137,7 @@ class RocketsViewController: UIViewController {
         backButton.title = "Назад"
         backButton.tintColor = .white
         
-        navigationController?.navigationBar.barTintColor = .blue
+        navigationController?.navigationBar.barTintColor = .black
         navigationController?.navigationBar.isTranslucent = false
         navigationItem.backBarButtonItem = backButton
     }
