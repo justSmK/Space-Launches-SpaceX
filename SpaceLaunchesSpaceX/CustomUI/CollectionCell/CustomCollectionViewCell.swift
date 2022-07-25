@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 
 class CustomCollectionViewCell: UICollectionViewCell {
+    
+    static let identifier = String(describing: CustomCollectionViewCell.self)
+    
     private lazy var roundedView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 32

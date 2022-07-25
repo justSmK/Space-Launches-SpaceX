@@ -44,13 +44,13 @@ class LaunchesTableViewCell: UITableViewCell {
     
     func configurate(name: String, date: String, isSuccess: Bool) {
         
-//        launchIconImageView.image = isSuccess ? UIImage(named: "successLaunch") : UIImage(named: "failedLaunch")
+        launchIconImageView.image = isSuccess ? UIImage(named: "successLaunch") : UIImage(named: "failedLaunch")
         
-        if isSuccess {
-            launchIconImageView.image = UIImage(named: "successLaunch")
-        } else {
-            launchIconImageView.image = UIImage(named: "failedLaunch")
-        }
+//        if isSuccess {
+//            launchIconImageView.image = UIImage(named: "successLaunch")
+//        } else {
+//            launchIconImageView.image = UIImage(named: "failedLaunch")
+//        }
         
         contentView.backgroundColor = .black
         nameLabel.text = name

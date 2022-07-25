@@ -27,11 +27,13 @@ class LaunchesViewController: UIViewController {
         
         launchesTableView.delegate = self
         launchesTableView.dataSource = self
-        view.backgroundColor = .blue
+        view.backgroundColor = .black
         setConstraints()
     }
     
 }
+
+// MARK: - SetConstraints
 
 extension LaunchesViewController {
     private func setConstraints() {
@@ -44,6 +46,8 @@ extension LaunchesViewController {
         ])
     }
 }
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension LaunchesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

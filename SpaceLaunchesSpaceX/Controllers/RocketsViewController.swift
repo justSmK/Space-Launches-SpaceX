@@ -7,75 +7,100 @@
 
 import UIKit
 
+@propertyWrapper
+public struct UsesAutoLayout<T: UIView> {
+    public var wrappedValue: T {
+        didSet {
+            wrappedValue.translatesAutoresizingMaskIntoConstraints = false
+        }
+    }
+
+    public init(wrappedValue: T) {
+        self.wrappedValue = wrappedValue
+        wrappedValue.translatesAutoresizingMaskIntoConstraints = false
+    }
+}
+
 class RocketsViewController: UIViewController {
     
     // MARK: - Properties
     
-    private lazy var scrollView: UIScrollView = {
+    @UsesAutoLayout
+    private var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
+//        scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.isUserInteractionEnabled = true
         scrollView.isScrollEnabled = true
         scrollView.backgroundColor = .black
         return scrollView
     }()
     
-    private lazy var rocketImageView: UIImageView = {
+    @UsesAutoLayout
+    private var rocketImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
+//        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .white
         return imageView
     }()
     
-    private lazy var headerView: UIView = {
+    @UsesAutoLayout
+    private var headerView: UIView = {
         let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .black
         view.layer.cornerRadius = 20
         return view
     }()
     
-    private lazy var rocketNameLabel: UILabel = {
+    @UsesAutoLayout
+    private var rocketNameLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+//        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 24, weight: .medium)
         label.textColor = .white
         label.text = "Rocket"
         return label
     }()
     
-    private lazy var collectionView: UICollectionView = {
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+    @UsesAutoLayout
+    private var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         layout.itemSize = CGSize(width: 100, height: 90)
         layout.scrollDirection = .horizontal
+        
         let collectionView = UICollectionView(frame: CGRect(x: 10, y: 30, width: 0, height: 100), collectionViewLayout: layout)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+//        collectionView.translatesAutoresizingMaskIntoConstraints = false
+//        collectionView.backgroundColor = .black
+        collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
         return collectionView
     }()
     
-    private lazy var rocketInfoView: RocketInfoView = {
+    @UsesAutoLayout
+    private var rocketInfoView: RocketInfoView = {
         let view = RocketInfoView()
-        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var firstStageView: StageView = {
+    @UsesAutoLayout
+    private var firstStageView: StageView = {
         let view = StageView()
-        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var secondStageView: StageView = {
+    @UsesAutoLayout
+    private var secondStageView: StageView = {
         let view = StageView()
-        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var launchesButton: UIButton = {
+    @UsesAutoLayout
+    private var launchesButton: UIButton = {
         let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = #colorLiteral(red: 0.1058690324, green: 0.1058908626, blue: 0.105864279, alpha: 1)
         button.setTitle("Посмотреть запуски", for: .normal)
         button.tintColor = .white
@@ -90,10 +115,11 @@ class RocketsViewController: UIViewController {
         print("Tap")
     }
     
-    private lazy var pageControl: UIPageControl = {
+    @UsesAutoLayout
+    private var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.numberOfPages = 2
-        pageControl.translatesAutoresizingMaskIntoConstraints = false
+//        pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.backgroundColor = #colorLiteral(red: 0.03920789436, green: 0.03922066465, blue: 0.03920510784, alpha: 1)
         return pageControl
     }()
@@ -151,7 +177,7 @@ extension RocketsViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath)
         guard let custom = cell as? CustomCollectionViewCell else {
             return cell
         }
