@@ -24,6 +24,7 @@ class LaunchesTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
+        label.lineBreakMode = .byTruncatingTail
         label.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         return label
     }()
@@ -75,8 +76,17 @@ extension LaunchesTableViewCell {
             launchCellView.heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
         ])
         
+        launchCellView.addSubview(launchIconImageView)
+        NSLayoutConstraint.activate([
+            launchIconImageView.centerYAnchor.constraint(equalTo: launchCellView.centerYAnchor),
+            launchIconImageView.trailingAnchor.constraint(equalTo: launchCellView.trailingAnchor, constant: -30),
+            launchIconImageView.heightAnchor.constraint(equalToConstant: 32),
+            launchIconImageView.widthAnchor.constraint(equalToConstant: 32),
+        ])
+        
         launchCellView.addSubview(nameLabel)
         NSLayoutConstraint.activate([
+            nameLabel.trailingAnchor.constraint(equalTo: launchIconImageView.leadingAnchor, constant: -20),
             nameLabel.topAnchor.constraint(greaterThanOrEqualTo: launchCellView.topAnchor),
             nameLabel.bottomAnchor.constraint(equalTo: launchCellView.centerYAnchor, constant: -2),
             nameLabel.leadingAnchor.constraint(equalTo: launchCellView.leadingAnchor, constant: 20),
@@ -84,17 +94,9 @@ extension LaunchesTableViewCell {
         
         launchCellView.addSubview(dateLabel)
         NSLayoutConstraint.activate([
-            dateLabel.bottomAnchor.constraint(lessThanOrEqualTo: launchCellView.bottomAnchor, constant: 10),
+            dateLabel.bottomAnchor.constraint(lessThanOrEqualTo: launchCellView.bottomAnchor, constant: -10),
             dateLabel.topAnchor.constraint(equalTo: launchCellView.centerYAnchor, constant: 2),
             dateLabel.leadingAnchor.constraint(equalTo: launchCellView.leadingAnchor, constant: 20),
-        ])
-        
-        launchCellView.addSubview(launchIconImageView)
-        NSLayoutConstraint.activate([
-            launchIconImageView.centerYAnchor.constraint(equalTo: launchCellView.centerYAnchor),
-            launchIconImageView.trailingAnchor.constraint(equalTo: launchCellView.trailingAnchor, constant: -30),
-            launchIconImageView.heightAnchor.constraint(equalToConstant: 32),
-            launchIconImageView.widthAnchor.constraint(equalToConstant: 32),
         ])
     }
 }

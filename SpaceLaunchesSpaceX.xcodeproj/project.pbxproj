@@ -10,10 +10,20 @@
 		BB29AEC7286C69D000E67CDF /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29AEC6286C69D000E67CDF /* CustomCollectionViewCell.swift */; };
 		BB29AEC9286CA4E600E67CDF /* RocketInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29AEC8286CA4E600E67CDF /* RocketInfoView.swift */; };
 		BB29AECB286CA77100E67CDF /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29AECA286CA77100E67CDF /* StageView.swift */; };
+		BB70614C28950E0400DABC42 /* NetworkingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70614B28950E0400DABC42 /* NetworkingServiceProtocol.swift */; };
+		BB70615228950EAE00DABC42 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70615128950EAE00DABC42 /* NetworkingService.swift */; };
+		BB7061562895101A00DABC42 /* LaunchesPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7061552895101A00DABC42 /* LaunchesPresenterProtocol.swift */; };
+		BB70615A2895107200DABC42 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7061592895107200DABC42 /* Launch.swift */; };
+		BB70615C289510B200DABC42 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70615B289510B200DABC42 /* Rocket.swift */; };
+		BB706161289512AB00DABC42 /* LaunchesViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB706160289512AB00DABC42 /* LaunchesViewProtocol.swift */; };
+		BB706163289512E000DABC42 /* RocketsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB706162289512E000DABC42 /* RocketsViewProtocol.swift */; };
+		BB7061652895136700DABC42 /* LaunchesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7061642895136700DABC42 /* LaunchesPresenter.swift */; };
 		BB79E00A27E489F700043380 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB79E00927E489F700043380 /* AppDelegate.swift */; };
 		BB79E00E27E489F700043380 /* RocketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB79E00D27E489F700043380 /* RocketsViewController.swift */; };
 		BB79E01327E489F800043380 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB79E01227E489F800043380 /* Assets.xcassets */; };
 		BB79E01627E489F800043380 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB79E01427E489F800043380 /* LaunchScreen.storyboard */; };
+		BB9E190E28955EFD00D2C3E3 /* RocketsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9E190D28955EFC00D2C3E3 /* RocketsPresenterProtocol.swift */; };
+		BB9E191028955FE000D2C3E3 /* RocketsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9E190F28955FE000D2C3E3 /* RocketsPresenter.swift */; };
 		BBBA135328704C85000E4FC2 /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA135228704C85000E4FC2 /* LaunchesViewController.swift */; };
 		BBBA1356287056A7000E4FC2 /* LaunchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA1355287056A7000E4FC2 /* LaunchesTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -22,12 +32,22 @@
 		BB29AEC6286C69D000E67CDF /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		BB29AEC8286CA4E600E67CDF /* RocketInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketInfoView.swift; sourceTree = "<group>"; };
 		BB29AECA286CA77100E67CDF /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
+		BB70614B28950E0400DABC42 /* NetworkingServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceProtocol.swift; sourceTree = "<group>"; };
+		BB70615128950EAE00DABC42 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		BB7061552895101A00DABC42 /* LaunchesPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesPresenterProtocol.swift; sourceTree = "<group>"; };
+		BB7061592895107200DABC42 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
+		BB70615B289510B200DABC42 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
+		BB706160289512AB00DABC42 /* LaunchesViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewProtocol.swift; sourceTree = "<group>"; };
+		BB706162289512E000DABC42 /* RocketsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsViewProtocol.swift; sourceTree = "<group>"; };
+		BB7061642895136700DABC42 /* LaunchesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesPresenter.swift; sourceTree = "<group>"; };
 		BB79E00627E489F700043380 /* SpaceLaunchesSpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceLaunchesSpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB79E00927E489F700043380 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB79E00D27E489F700043380 /* RocketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsViewController.swift; sourceTree = "<group>"; };
 		BB79E01227E489F800043380 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB79E01527E489F800043380 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB79E01727E489F800043380 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB9E190D28955EFC00D2C3E3 /* RocketsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsPresenterProtocol.swift; sourceTree = "<group>"; };
+		BB9E190F28955FE000D2C3E3 /* RocketsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsPresenter.swift; sourceTree = "<group>"; };
 		BBBA135228704C85000E4FC2 /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
 		BBBA1355287056A7000E4FC2 /* LaunchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -43,6 +63,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB70615328950FEB00DABC42 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				BB70615428950FFE00DABC42 /* LaunchesPresenter */,
+				BB7061572895104000DABC42 /* RocketsPresenter */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		BB70615428950FFE00DABC42 /* LaunchesPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				BB7061552895101A00DABC42 /* LaunchesPresenterProtocol.swift */,
+				BB7061642895136700DABC42 /* LaunchesPresenter.swift */,
+			);
+			path = LaunchesPresenter;
+			sourceTree = "<group>";
+		};
+		BB7061572895104000DABC42 /* RocketsPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				BB9E190D28955EFC00D2C3E3 /* RocketsPresenterProtocol.swift */,
+				BB9E190F28955FE000D2C3E3 /* RocketsPresenter.swift */,
+			);
+			path = RocketsPresenter;
+			sourceTree = "<group>";
+		};
+		BB7061582895105F00DABC42 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				BB7061592895107200DABC42 /* Launch.swift */,
+				BB70615B289510B200DABC42 /* Rocket.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		BB70615D2895125600DABC42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BB70615E2895125F00DABC42 /* LaunchesView */,
+				BB70615F2895126A00DABC42 /* RocketsView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BB70615E2895125F00DABC42 /* LaunchesView */ = {
+			isa = PBXGroup;
+			children = (
+				BBBA135228704C85000E4FC2 /* LaunchesViewController.swift */,
+				BB706160289512AB00DABC42 /* LaunchesViewProtocol.swift */,
+			);
+			path = LaunchesView;
+			sourceTree = "<group>";
+		};
+		BB70615F2895126A00DABC42 /* RocketsView */ = {
+			isa = PBXGroup;
+			children = (
+				BB79E00D27E489F700043380 /* RocketsViewController.swift */,
+				BB706162289512E000DABC42 /* RocketsViewProtocol.swift */,
+			);
+			path = RocketsView;
+			sourceTree = "<group>";
+		};
 		BB79DFFD27E489F700043380 = {
 			isa = PBXGroup;
 			children = (
@@ -63,8 +146,12 @@
 			isa = PBXGroup;
 			children = (
 				BB79E00927E489F700043380 /* AppDelegate.swift */,
-				BBBA135128702AAD000E4FC2 /* Controllers */,
+				BB70614B28950E0400DABC42 /* NetworkingServiceProtocol.swift */,
+				BB70615128950EAE00DABC42 /* NetworkingService.swift */,
 				BBBA134F28702A60000E4FC2 /* CustomUI */,
+				BB70615328950FEB00DABC42 /* Presentation */,
+				BB7061582895105F00DABC42 /* Structs */,
+				BB70615D2895125600DABC42 /* View */,
 				BB79E01427E489F800043380 /* LaunchScreen.storyboard */,
 				BB79E01227E489F800043380 /* Assets.xcassets */,
 				BB79E01727E489F800043380 /* Info.plist */,
@@ -89,15 +176,6 @@
 				BB29AEC6286C69D000E67CDF /* CustomCollectionViewCell.swift */,
 			);
 			path = CollectionCell;
-			sourceTree = "<group>";
-		};
-		BBBA135128702AAD000E4FC2 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				BB79E00D27E489F700043380 /* RocketsViewController.swift */,
-				BBBA135228704C85000E4FC2 /* LaunchesViewController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		BBBA135428705690000E4FC2 /* TableViewCell */ = {
@@ -179,11 +257,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB79E00E27E489F700043380 /* RocketsViewController.swift in Sources */,
+				BB706161289512AB00DABC42 /* LaunchesViewProtocol.swift in Sources */,
+				BB7061562895101A00DABC42 /* LaunchesPresenterProtocol.swift in Sources */,
 				BB29AECB286CA77100E67CDF /* StageView.swift in Sources */,
+				BB70615C289510B200DABC42 /* Rocket.swift in Sources */,
+				BB9E191028955FE000D2C3E3 /* RocketsPresenter.swift in Sources */,
+				BB7061652895136700DABC42 /* LaunchesPresenter.swift in Sources */,
+				BB70615A2895107200DABC42 /* Launch.swift in Sources */,
 				BBBA135328704C85000E4FC2 /* LaunchesViewController.swift in Sources */,
+				BB70615228950EAE00DABC42 /* NetworkingService.swift in Sources */,
 				BB79E00A27E489F700043380 /* AppDelegate.swift in Sources */,
 				BBBA1356287056A7000E4FC2 /* LaunchesTableViewCell.swift in Sources */,
+				BB70614C28950E0400DABC42 /* NetworkingServiceProtocol.swift in Sources */,
 				BB29AEC9286CA4E600E67CDF /* RocketInfoView.swift in Sources */,
+				BB706163289512E000DABC42 /* RocketsViewProtocol.swift in Sources */,
+				BB9E190E28955EFD00D2C3E3 /* RocketsPresenterProtocol.swift in Sources */,
 				BB29AEC7286C69D000E67CDF /* CustomCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,9 +21,11 @@ public struct UsesAutoLayout<T: UIView> {
     }
 }
 
-class RocketsViewController: UIViewController {
+class RocketsViewController: UIViewController, RocketsViewProtocol {
     
     // MARK: - Properties
+    
+    var presenter: RocketsPresenterProtocol?
     
     @UsesAutoLayout
     private var scrollView: UIScrollView = {
@@ -111,8 +113,9 @@ class RocketsViewController: UIViewController {
     
     @objc private func launchesButtonAction() {
         let launchesViewController = LaunchesViewController()
+        let rocketId = presenter?.getRocketId(for: pageControl.currentPage)
+        launchesViewController.rocketId = rocketId ?? ""
         navigationController?.pushViewController(launchesViewController, animated: true)
-        print("Tap")
     }
     
     @UsesAutoLayout
@@ -121,14 +124,21 @@ class RocketsViewController: UIViewController {
         pageControl.numberOfPages = 2
 //        pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.backgroundColor = #colorLiteral(red: 0.03920789436, green: 0.03922066465, blue: 0.03920510784, alpha: 1)
+        pageControl.addTarget(self, action: #selector(pageDidChange), for: .valueChanged)
         return pageControl
     }()
+    
+    @objc private func pageDidChange() {
+        updateValues()
+    }
     
     
     // MARK: - LyfeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presenter = RocketsPresenter(view: self)
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -151,11 +161,54 @@ class RocketsViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    func updateValues() {
+        DispatchQueue.main.async {
+            self.fillData()
+            self.collectionView.reloadData()
+        }
+    }
+    
     
     private func fillData() {
-        rocketInfoView.configurate(launchDate: "10 февраля, 2020", country: "США", cost: "100")
-        firstStageView.configurate(header: "Первая ступень", enginesCount: "9", fuelMass: "20", burnTime: "120")
-        secondStageView.configurate(header: "Вторая ступень", enginesCount: "90", fuelMass: "200", burnTime: "1200")
+        
+        guard let pagesCount = presenter?.getPagesCount() else {
+            return
+        }
+        
+        pageControl.numberOfPages = pagesCount
+        
+        setRocketInfoValues()
+        setFirstStageValues()
+        setSecondStageValues()
+        
+        guard let name = presenter?.getRocketName(for: pageControl.currentPage) else {
+            return
+        }
+        
+        rocketNameLabel.text = name
+    }
+    
+    private func setRocketInfoValues() {
+        guard let rocketInfo = presenter?.getRocketInfo(for: pageControl.currentPage) else {
+            return
+        }
+        
+        rocketInfoView.configurate(launchDate: rocketInfo.firstLaunch, country: rocketInfo.country, cost: rocketInfo.launchCost)
+    }
+    
+    private func setFirstStageValues() {
+        guard let firstStageInfo = presenter?.getFirstStageInfo(for: pageControl.currentPage) else {
+            return
+        }
+
+        firstStageView.configurate(header: "Первая ступень", enginesCount: firstStageInfo.enginesCount, fuelMass: firstStageInfo.enginesCount, burnTime: firstStageInfo.burnTime)
+    }
+    
+    private func setSecondStageValues() {
+        guard let secondStageInfo = presenter?.getSecondStageInfo(for: pageControl.currentPage) else {
+            return
+        }
+        secondStageView.configurate(header: "Вторая ступень", enginesCount: secondStageInfo.enginesCount, fuelMass: secondStageInfo.enginesCount, burnTime: secondStageInfo.burnTime)
     }
     
     private func configurateNavigationBar() {

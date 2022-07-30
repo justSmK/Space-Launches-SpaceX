@@ -8,7 +8,10 @@
 import Foundation
 import UIKit
 
-class LaunchesViewController: UIViewController {
+class LaunchesViewController: UIViewController, LaunchesViewProtocol {
+    
+    var presenter: LaunchesPresenterProtocol?
+    var rocketId: String = ""
     
     private lazy var launchesTableView: UITableView = {
         let tableView = UITableView(frame: CGRect.zero, style: .plain)
@@ -24,11 +27,17 @@ class LaunchesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        presenter = LaunchesPresenter(view: self, rocketId: rocketId)
         launchesTableView.delegate = self
         launchesTableView.dataSource = self
         view.backgroundColor = .black
         setConstraints()
+    }
+    
+    func updateValues() {
+        DispatchQueue.main.async {
+            self.launchesTableView.reloadData()
+        }
     }
     
 }
@@ -51,7 +60,7 @@ extension LaunchesViewController {
 
 extension LaunchesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return presenter?.getLaunchesCount() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,11 +69,14 @@ extension LaunchesViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         
-        if indexPath.row == 1 {
-            launchCell.configurate(name: "Fall", date: "02 июля, 2022", isSuccess: false)
-        } else {
-            launchCell.configurate(name: "Success", date: "02 июля, 2022", isSuccess: true)
+        guard let launchDescription = presenter?.getLaunchDescription(for: indexPath.row) else {
+            return launchCell
         }
-        return cell
+        
+        launchCell.configurate(name: launchDescription.name,
+                               date: launchDescription.date,
+                               isSuccess: launchDescription.isSuccess)
+        
+        return launchCell
     }
 }
