@@ -25,6 +25,7 @@ final class RocketsPresenter: RocketsPresenterProtocol {
                 let rockets = try JSONDecoder().decode([Rocket].self, from: data)
                 self?.rockets = rockets
                 self?.view?.updateValues()
+                print(rockets.count)
             } catch {
                 print(error)
             }

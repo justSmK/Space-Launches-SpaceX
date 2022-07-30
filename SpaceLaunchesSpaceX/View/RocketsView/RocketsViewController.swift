@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 @propertyWrapper
 public struct UsesAutoLayout<T: UIView> {
@@ -27,82 +28,83 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
     
     var presenter: RocketsPresenterProtocol?
     
-    @UsesAutoLayout
-    private var scrollView: UIScrollView = {
+//    @UsesAutoLayout
+    private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-//        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.isUserInteractionEnabled = true
         scrollView.isScrollEnabled = true
         scrollView.backgroundColor = .black
         return scrollView
     }()
     
-    @UsesAutoLayout
-    private var rocketImageView: UIImageView = {
+//    @UsesAutoLayout
+    private lazy var rocketImageView: UIImageView = {
         let imageView = UIImageView()
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .white
         return imageView
     }()
     
-    @UsesAutoLayout
-    private var headerView: UIView = {
+//    @UsesAutoLayout
+    private lazy var headerView: UIView = {
         let view = UIView()
-//        view.translatesAutoresizingMaskIntoConstraints = false
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .black
         view.layer.cornerRadius = 20
         return view
     }()
     
-    @UsesAutoLayout
-    private var rocketNameLabel: UILabel = {
+//    @UsesAutoLayout
+    private lazy var rocketNameLabel: UILabel = {
         let label = UILabel()
-//        label.translatesAutoresizingMaskIntoConstraints = false
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 24, weight: .medium)
         label.textColor = .white
         label.text = "Rocket"
         return label
     }()
     
-    @UsesAutoLayout
-    private var collectionView: UICollectionView = {
+//    @UsesAutoLayout
+    private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         layout.itemSize = CGSize(width: 100, height: 90)
         layout.scrollDirection = .horizontal
         
         let collectionView = UICollectionView(frame: CGRect(x: 10, y: 30, width: 0, height: 100), collectionViewLayout: layout)
-//        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
 //        collectionView.backgroundColor = .black
         collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
+        collectionView.backgroundColor = .black
         return collectionView
     }()
     
-    @UsesAutoLayout
-    private var rocketInfoView: RocketInfoView = {
+//    @UsesAutoLayout
+    private lazy var rocketInfoView: RocketInfoView = {
         let view = RocketInfoView()
-//        view.translatesAutoresizingMaskIntoConstraints = false
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    @UsesAutoLayout
-    private var firstStageView: StageView = {
+//    @UsesAutoLayout
+    private lazy var firstStageView: StageView = {
         let view = StageView()
-//        view.translatesAutoresizingMaskIntoConstraints = false
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    @UsesAutoLayout
+//    @UsesAutoLayout
     private var secondStageView: StageView = {
         let view = StageView()
-//        view.translatesAutoresizingMaskIntoConstraints = false
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    @UsesAutoLayout
-    private var launchesButton: UIButton = {
+//    @UsesAutoLayout
+    private lazy var launchesButton: UIButton = {
         let button = UIButton()
-//        button.translatesAutoresizingMaskIntoConstraints = false
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = #colorLiteral(red: 0.1058690324, green: 0.1058908626, blue: 0.105864279, alpha: 1)
         button.setTitle("Посмотреть запуски", for: .normal)
         button.tintColor = .white
@@ -115,14 +117,16 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
         let launchesViewController = LaunchesViewController()
         let rocketId = presenter?.getRocketId(for: pageControl.currentPage)
         launchesViewController.rocketId = rocketId ?? ""
+        let rocketName = presenter?.getRocketName(for: pageControl.currentPage)
+        launchesViewController.rocketName = rocketName ?? ""
         navigationController?.pushViewController(launchesViewController, animated: true)
     }
     
-    @UsesAutoLayout
-    private var pageControl: UIPageControl = {
+//    @UsesAutoLayout
+    private lazy var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.numberOfPages = 2
-//        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.backgroundColor = #colorLiteral(red: 0.03920789436, green: 0.03922066465, blue: 0.03920510784, alpha: 1)
         pageControl.addTarget(self, action: #selector(pageDidChange), for: .valueChanged)
         return pageControl
@@ -175,6 +179,10 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
             return
         }
         
+        if pagesCount < 1 {
+            return
+        }
+        
         pageControl.numberOfPages = pagesCount
         
         setRocketInfoValues()
@@ -191,7 +199,7 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
             return
         }
         
-//        rocketImageView.setImage(with: url)
+        rocketImageView.kf.setImage(with: url)
     }
     
     private func setRocketInfoValues() {
