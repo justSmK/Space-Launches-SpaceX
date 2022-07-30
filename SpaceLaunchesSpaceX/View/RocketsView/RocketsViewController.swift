@@ -186,6 +186,12 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
         }
         
         rocketNameLabel.text = name
+        
+        guard let url = presenter?.getImageUrl(for: pageControl.currentPage) else {
+            return
+        }
+        
+//        rocketImageView.setImage(with: url)
     }
     
     private func setRocketInfoValues() {

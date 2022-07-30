@@ -18,7 +18,7 @@ protocol RocketsPresenterProtocol {
     func getSecondStageInfo(for index: Int) -> (enginesCount: String,
                                                 massOfFuel: String,
                                                 burnTime: String)
-    func getImageUrl(for index: Int) -> URL
+    func getImageUrl(for index: Int) -> URL?
     func getPagesCount() -> Int
     func getRocketName(for index: Int) -> String
     func getRocketId(for index: Int) -> String
