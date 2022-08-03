@@ -117,7 +117,7 @@ class StageView: UIView {
         burnTimeValueLabel.text = burnTime
         setConstraints()
     }
-
+    
 }
 
 // MARK: - SetConstraints

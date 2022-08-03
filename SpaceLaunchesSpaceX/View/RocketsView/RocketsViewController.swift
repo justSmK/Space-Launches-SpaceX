@@ -15,7 +15,7 @@ public struct UsesAutoLayout<T: UIView> {
             wrappedValue.translatesAutoresizingMaskIntoConstraints = false
         }
     }
-
+    
     public init(wrappedValue: T) {
         self.wrappedValue = wrappedValue
         wrappedValue.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +28,7 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
     
     var presenter: RocketsPresenterProtocol?
     
-//    @UsesAutoLayout
+    //    @UsesAutoLayout
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -38,7 +38,7 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
         return scrollView
     }()
     
-//    @UsesAutoLayout
+    //    @UsesAutoLayout
     private lazy var rocketImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -46,7 +46,7 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
         return imageView
     }()
     
-//    @UsesAutoLayout
+    //    @UsesAutoLayout
     private lazy var headerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +55,7 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
         return view
     }()
     
-//    @UsesAutoLayout
+    //    @UsesAutoLayout
     private lazy var rocketNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -83,7 +83,7 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
         self.present(settingsNavigationController, animated: true, completion: nil)
     }
     
-//    @UsesAutoLayout
+    //    @UsesAutoLayout
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
@@ -92,34 +92,34 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
         
         let collectionView = UICollectionView(frame: CGRect(x: 10, y: 30, width: 0, height: 100), collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-//        collectionView.backgroundColor = .black
+        //        collectionView.backgroundColor = .black
         collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
         collectionView.backgroundColor = .black
         return collectionView
     }()
     
-//    @UsesAutoLayout
+    //    @UsesAutoLayout
     private lazy var rocketInfoView: RocketInfoView = {
         let view = RocketInfoView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-//    @UsesAutoLayout
+    //    @UsesAutoLayout
     private lazy var firstStageView: StageView = {
         let view = StageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-//    @UsesAutoLayout
+    //    @UsesAutoLayout
     private var secondStageView: StageView = {
         let view = StageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-//    @UsesAutoLayout
+    //    @UsesAutoLayout
     private lazy var launchesButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -140,7 +140,7 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
         navigationController?.pushViewController(launchesViewController, animated: true)
     }
     
-//    @UsesAutoLayout
+    //    @UsesAutoLayout
     private lazy var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.numberOfPages = 2
@@ -236,7 +236,7 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
         guard let firstStageInfo = presenter?.getFirstStageInfo(for: pageControl.currentPage) else {
             return
         }
-
+        
         firstStageView.configurate(header: "Первая ступень", enginesCount: firstStageInfo.enginesCount, fuelMass: firstStageInfo.enginesCount, burnTime: firstStageInfo.burnTime)
     }
     

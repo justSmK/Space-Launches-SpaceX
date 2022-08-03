@@ -47,11 +47,11 @@ class LaunchesTableViewCell: UITableViewCell {
         
         launchIconImageView.image = isSuccess ? UIImage(named: "successLaunch") : UIImage(named: "failedLaunch")
         
-//        if isSuccess {
-//            launchIconImageView.image = UIImage(named: "successLaunch")
-//        } else {
-//            launchIconImageView.image = UIImage(named: "failedLaunch")
-//        }
+        //        if isSuccess {
+        //            launchIconImageView.image = UIImage(named: "successLaunch")
+        //        } else {
+        //            launchIconImageView.image = UIImage(named: "failedLaunch")
+        //        }
         
         contentView.backgroundColor = .black
         nameLabel.text = name

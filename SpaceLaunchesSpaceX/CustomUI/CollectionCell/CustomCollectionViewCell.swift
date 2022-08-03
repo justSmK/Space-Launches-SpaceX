@@ -46,9 +46,9 @@ class CustomCollectionViewCell: UICollectionViewCell {
         setConstraints()
     }
     
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//    }
+    //    override func awakeFromNib() {
+    //        super.awakeFromNib()
+    //    }
 }
 
 // MARK: - SetConstraints
