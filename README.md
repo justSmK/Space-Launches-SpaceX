@@ -2,5 +2,5 @@
 
 ### CocoaPods
 
-pod install
+pod install <br/>
 pod repo update
