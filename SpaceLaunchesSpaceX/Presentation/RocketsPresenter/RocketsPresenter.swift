@@ -110,7 +110,7 @@ final class RocketsPresenter: RocketsPresenterProtocol {
     
     private func configurateMass(rocket index: Int) -> (value: String, name: String) {
         guard let mass = rockets[index].mass else {
-            return (value: "", name: "Масса, ft")
+            return (value: "0", name: "Масса, kg")
         }
         guard let service = settingsService else {
             return (value: String(mass.kg), name: "Масса, kg")
@@ -128,9 +128,9 @@ final class RocketsPresenter: RocketsPresenterProtocol {
     
     private func configuratePayload(rocket index: Int) -> (value: String, name: String) {
         guard let payloads = rockets[index].payloads?.allObjects as? [DBPayload] else {
-            return (value: "", name: "Нагрузка, ft")
+            return (value: "0", name: "Нагрузка, ft")
         }
-        if payloads.isEmpty { return (value: "", name: "Нагрузка, ft") }
+        if payloads.isEmpty { return (value: "0", name: "Нагрузка, kg") }
         guard let service = settingsService else {
             return (value: String(payloads[0].kg), name: "Нагрузка, kg")
         }
