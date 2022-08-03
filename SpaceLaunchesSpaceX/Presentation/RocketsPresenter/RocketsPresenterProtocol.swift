@@ -22,4 +22,7 @@ protocol RocketsPresenterProtocol {
     func getPagesCount() -> Int
     func getRocketName(for index: Int) -> String
     func getRocketId(for index: Int) -> String
+    
+    func getCharacteristicsCount() -> Int
+    func getCharacterictics(for rocketIndex: Int, characteristicIndex: Int) -> (value: String, name: String)
 }

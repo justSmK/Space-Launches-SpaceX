@@ -65,6 +65,24 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
         return label
     }()
     
+    private lazy var settingsButton: UIButton = {
+        let button = UIButton()
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.contentVerticalAlignment = .fill
+        button.contentHorizontalAlignment = .fill
+        button.tintColor = .gray
+        button.setImage(UIImage(systemName: "gearshape"), for: .normal)
+        button.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc private func settingsButtonTapped() {
+        let settingsViewController = SettingsViewController()
+        let settingsNavigationController = UINavigationController(rootViewController: settingsViewController)
+        self.present(settingsNavigationController, animated: true, completion: nil)
+    }
+    
 //    @UsesAutoLayout
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -172,6 +190,10 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
         }
     }
     
+    func reloadCollectionViewCell(indexPaths: [IndexPath]) {
+        collectionView.reloadItems(at: indexPaths)
+    }
+    
     
     private func fillData() {
         
@@ -240,7 +262,7 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
 
 extension RocketsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return presenter?.getCharacteristicsCount() ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -248,7 +270,12 @@ extension RocketsViewController: UICollectionViewDelegate, UICollectionViewDataS
         guard let custom = cell as? CustomCollectionViewCell else {
             return cell
         }
-        custom.configurateCell(value: "123456789", key: "aaa")
+        
+        guard let characteristics = presenter?.getCharacterictics(for: pageControl.currentPage, characteristicIndex: indexPath.row) else {
+            return custom
+        }
+        custom.configurateCell(value: characteristics.value, key: characteristics.name)
+        
         return custom
     }
 }
@@ -291,6 +318,14 @@ extension RocketsViewController {
             rocketNameLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
             rocketNameLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 30),
             rocketNameLabel.trailingAnchor.constraint(greaterThanOrEqualTo: headerView.trailingAnchor, constant: 20),
+        ])
+        
+        headerView.addSubview(settingsButton)
+        NSLayoutConstraint.activate([
+            settingsButton.centerYAnchor.constraint(equalTo: rocketNameLabel.centerYAnchor),
+            settingsButton.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -30),
+            settingsButton.heightAnchor.constraint(equalToConstant: 30),
+            settingsButton.widthAnchor.constraint(equalToConstant: 30)
         ])
         
         // MARK: -

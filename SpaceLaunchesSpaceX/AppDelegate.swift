@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
+        let service: SettingsServiceProtocol = SettingsService()
+        ServiceLocator.shared.register(service: service)
+        
         return true
     }
 

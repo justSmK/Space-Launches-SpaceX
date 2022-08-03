@@ -25,6 +25,19 @@
 		BB79E01627E489F800043380 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB79E01427E489F800043380 /* LaunchScreen.storyboard */; };
 		BB9E190E28955EFD00D2C3E3 /* RocketsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9E190D28955EFC00D2C3E3 /* RocketsPresenterProtocol.swift */; };
 		BB9E191028955FE000D2C3E3 /* RocketsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9E190F28955FE000D2C3E3 /* RocketsPresenter.swift */; };
+		BBB9A6D9289A614600218B89 /* SettingsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A6D8289A614600218B89 /* SettingsViewProtocol.swift */; };
+		BBB9A6DB289A61E100218B89 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A6DA289A61E100218B89 /* SettingsViewController.swift */; };
+		BBB9A6DE289A658A00218B89 /* SettingsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A6DD289A658A00218B89 /* SettingsPresenterProtocol.swift */; };
+		BBB9A6E0289A65EB00218B89 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A6DF289A65EB00218B89 /* SettingsPresenter.swift */; };
+		BBB9A6E4289A667400218B89 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A6E3289A667400218B89 /* ServiceLocator.swift */; };
+		BBB9A6E8289A669E00218B89 /* UserDefaultsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A6E7289A669E00218B89 /* UserDefaultsServiceProtocol.swift */; };
+		BBB9A6EA289A66D000218B89 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A6E9289A66D000218B89 /* UserDefaultsService.swift */; };
+		BBB9A6EC289A672C00218B89 /* SettingsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A6EB289A672C00218B89 /* SettingsServiceProtocol.swift */; };
+		BBB9A6EE289A675200218B89 /* SettingsServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A6ED289A675200218B89 /* SettingsServiceDelegate.swift */; };
+		BBB9A6F0289A679C00218B89 /* SettingsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A6EF289A679C00218B89 /* SettingsEnum.swift */; };
+		BBB9A6F2289A683C00218B89 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A6F1289A683C00218B89 /* SettingsService.swift */; };
+		BBB9A6F4289A7E8400218B89 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A6F3289A7E8400218B89 /* SettingsTableViewCell.swift */; };
+		BBB9A6F6289A80AF00218B89 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB9A6F5289A80AF00218B89 /* SettingsViewController.xib */; };
 		BBBA135328704C85000E4FC2 /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA135228704C85000E4FC2 /* LaunchesViewController.swift */; };
 		BBBA1356287056A7000E4FC2 /* LaunchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA1355287056A7000E4FC2 /* LaunchesTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +65,19 @@
 		BB79E01727E489F800043380 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB9E190D28955EFC00D2C3E3 /* RocketsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsPresenterProtocol.swift; sourceTree = "<group>"; };
 		BB9E190F28955FE000D2C3E3 /* RocketsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsPresenter.swift; sourceTree = "<group>"; };
+		BBB9A6D8289A614600218B89 /* SettingsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewProtocol.swift; sourceTree = "<group>"; };
+		BBB9A6DA289A61E100218B89 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BBB9A6DD289A658A00218B89 /* SettingsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenterProtocol.swift; sourceTree = "<group>"; };
+		BBB9A6DF289A65EB00218B89 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		BBB9A6E3289A667400218B89 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		BBB9A6E7289A669E00218B89 /* UserDefaultsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsServiceProtocol.swift; sourceTree = "<group>"; };
+		BBB9A6E9289A66D000218B89 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		BBB9A6EB289A672C00218B89 /* SettingsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsServiceProtocol.swift; sourceTree = "<group>"; };
+		BBB9A6ED289A675200218B89 /* SettingsServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsServiceDelegate.swift; sourceTree = "<group>"; };
+		BBB9A6EF289A679C00218B89 /* SettingsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEnum.swift; sourceTree = "<group>"; };
+		BBB9A6F1289A683C00218B89 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
+		BBB9A6F3289A7E8400218B89 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		BBB9A6F5289A80AF00218B89 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		BBBA135228704C85000E4FC2 /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
 		BBBA1355287056A7000E4FC2 /* LaunchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,7 +100,6 @@
 				3ABCA664A09BB84E6ED8E91E /* Pods-SpaceLaunchesSpaceX.debug.xcconfig */,
 				09B66909AB9EA36443A0905E /* Pods-SpaceLaunchesSpaceX.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,6 +108,7 @@
 			children = (
 				BB70615428950FFE00DABC42 /* LaunchesPresenter */,
 				BB7061572895104000DABC42 /* RocketsPresenter */,
+				BBB9A6DC289A655000218B89 /* SettingsPresenter */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -119,6 +145,7 @@
 			children = (
 				BB70615E2895125F00DABC42 /* LaunchesView */,
 				BB70615F2895126A00DABC42 /* RocketsView */,
+				BBB9A6D7289A613000218B89 /* SettingsView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -135,8 +162,8 @@
 		BB70615F2895126A00DABC42 /* RocketsView */ = {
 			isa = PBXGroup;
 			children = (
-				BB79E00D27E489F700043380 /* RocketsViewController.swift */,
 				BB706162289512E000DABC42 /* RocketsViewProtocol.swift */,
+				BB79E00D27E489F700043380 /* RocketsViewController.swift */,
 			);
 			path = RocketsView;
 			sourceTree = "<group>";
@@ -162,9 +189,8 @@
 		BB79E00827E489F700043380 /* SpaceLaunchesSpaceX */ = {
 			isa = PBXGroup;
 			children = (
+				BBB9A6E1289A664300218B89 /* ServicesLayer */,
 				BB79E00927E489F700043380 /* AppDelegate.swift */,
-				BB70614B28950E0400DABC42 /* NetworkingServiceProtocol.swift */,
-				BB70615128950EAE00DABC42 /* NetworkingService.swift */,
 				BBBA134F28702A60000E4FC2 /* CustomUI */,
 				BB70615328950FEB00DABC42 /* Presentation */,
 				BB7061582895105F00DABC42 /* Structs */,
@@ -174,6 +200,65 @@
 				BB79E01727E489F800043380 /* Info.plist */,
 			);
 			path = SpaceLaunchesSpaceX;
+			sourceTree = "<group>";
+		};
+		BBB9A6D7289A613000218B89 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				BBB9A6D8289A614600218B89 /* SettingsViewProtocol.swift */,
+				BBB9A6DA289A61E100218B89 /* SettingsViewController.swift */,
+				BBB9A6F5289A80AF00218B89 /* SettingsViewController.xib */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
+		BBB9A6DC289A655000218B89 /* SettingsPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				BBB9A6DD289A658A00218B89 /* SettingsPresenterProtocol.swift */,
+				BBB9A6DF289A65EB00218B89 /* SettingsPresenter.swift */,
+			);
+			path = SettingsPresenter;
+			sourceTree = "<group>";
+		};
+		BBB9A6E1289A664300218B89 /* ServicesLayer */ = {
+			isa = PBXGroup;
+			children = (
+				BBB9A6E6289A668500218B89 /* UserDefaultsService */,
+				BBB9A6E5289A667C00218B89 /* SettingsService */,
+				BBB9A6E2289A665300218B89 /* NetworkService */,
+				BBB9A6E3289A667400218B89 /* ServiceLocator.swift */,
+			);
+			path = ServicesLayer;
+			sourceTree = "<group>";
+		};
+		BBB9A6E2289A665300218B89 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				BB70614B28950E0400DABC42 /* NetworkingServiceProtocol.swift */,
+				BB70615128950EAE00DABC42 /* NetworkingService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		BBB9A6E5289A667C00218B89 /* SettingsService */ = {
+			isa = PBXGroup;
+			children = (
+				BBB9A6ED289A675200218B89 /* SettingsServiceDelegate.swift */,
+				BBB9A6EF289A679C00218B89 /* SettingsEnum.swift */,
+				BBB9A6EB289A672C00218B89 /* SettingsServiceProtocol.swift */,
+				BBB9A6F1289A683C00218B89 /* SettingsService.swift */,
+			);
+			path = SettingsService;
+			sourceTree = "<group>";
+		};
+		BBB9A6E6289A668500218B89 /* UserDefaultsService */ = {
+			isa = PBXGroup;
+			children = (
+				BBB9A6E7289A669E00218B89 /* UserDefaultsServiceProtocol.swift */,
+				BBB9A6E9289A66D000218B89 /* UserDefaultsService.swift */,
+			);
+			path = UserDefaultsService;
 			sourceTree = "<group>";
 		};
 		BBBA134F28702A60000E4FC2 /* CustomUI */ = {
@@ -199,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				BBBA1355287056A7000E4FC2 /* LaunchesTableViewCell.swift */,
+				BBB9A6F3289A7E8400218B89 /* SettingsTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -272,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB79E01627E489F800043380 /* LaunchScreen.storyboard in Resources */,
+				BBB9A6F6289A80AF00218B89 /* SettingsViewController.xib in Resources */,
 				BB79E01327E489F800043380 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,20 +415,32 @@
 				BB79E00E27E489F700043380 /* RocketsViewController.swift in Sources */,
 				BB706161289512AB00DABC42 /* LaunchesViewProtocol.swift in Sources */,
 				BB7061562895101A00DABC42 /* LaunchesPresenterProtocol.swift in Sources */,
+				BBB9A6F0289A679C00218B89 /* SettingsEnum.swift in Sources */,
+				BBB9A6D9289A614600218B89 /* SettingsViewProtocol.swift in Sources */,
 				BB29AECB286CA77100E67CDF /* StageView.swift in Sources */,
+				BBB9A6DB289A61E100218B89 /* SettingsViewController.swift in Sources */,
 				BB70615C289510B200DABC42 /* Rocket.swift in Sources */,
 				BB9E191028955FE000D2C3E3 /* RocketsPresenter.swift in Sources */,
 				BB7061652895136700DABC42 /* LaunchesPresenter.swift in Sources */,
 				BB70615A2895107200DABC42 /* Launch.swift in Sources */,
 				BBBA135328704C85000E4FC2 /* LaunchesViewController.swift in Sources */,
 				BB70615228950EAE00DABC42 /* NetworkingService.swift in Sources */,
+				BBB9A6EA289A66D000218B89 /* UserDefaultsService.swift in Sources */,
+				BBB9A6EC289A672C00218B89 /* SettingsServiceProtocol.swift in Sources */,
+				BBB9A6F4289A7E8400218B89 /* SettingsTableViewCell.swift in Sources */,
 				BB79E00A27E489F700043380 /* AppDelegate.swift in Sources */,
+				BBB9A6DE289A658A00218B89 /* SettingsPresenterProtocol.swift in Sources */,
+				BBB9A6E8289A669E00218B89 /* UserDefaultsServiceProtocol.swift in Sources */,
+				BBB9A6E4289A667400218B89 /* ServiceLocator.swift in Sources */,
 				BBBA1356287056A7000E4FC2 /* LaunchesTableViewCell.swift in Sources */,
 				BB70614C28950E0400DABC42 /* NetworkingServiceProtocol.swift in Sources */,
 				BB29AEC9286CA4E600E67CDF /* RocketInfoView.swift in Sources */,
 				BB706163289512E000DABC42 /* RocketsViewProtocol.swift in Sources */,
 				BB9E190E28955EFD00D2C3E3 /* RocketsPresenterProtocol.swift in Sources */,
+				BBB9A6EE289A675200218B89 /* SettingsServiceDelegate.swift in Sources */,
 				BB29AEC7286C69D000E67CDF /* CustomCollectionViewCell.swift in Sources */,
+				BBB9A6F2289A683C00218B89 /* SettingsService.swift in Sources */,
+				BBB9A6E0289A65EB00218B89 /* SettingsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
