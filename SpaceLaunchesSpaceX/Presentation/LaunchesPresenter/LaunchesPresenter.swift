@@ -12,20 +12,40 @@ final class LaunchesPresenter: LaunchesPresenterProtocol {
     weak var view: LaunchesViewProtocol?
     private var rocketId: String
     private var launches: [DBLaunch] = [DBLaunch]()
-    private var coreDataStack = CoreDataStack()
+    private var coreDataStack: CoreDataStackProtocol?
+    private lazy var fetchRequesst: NSFetchRequest<DBLaunch> = {
+        let request: NSFetchRequest<DBLaunch> = DBLaunch.fetchRequest()
+        let predicate = NSPredicate(format: "rocket == %@", rocketId)
+        request.sortDescriptors = [
+            NSSortDescriptor(key: #keyPath(DBLaunch.date), ascending: true)
+        ]
+        request.predicate = predicate
+        return request
+    }()
     
     init(view: LaunchesViewProtocol, rocketId: String) {
         self.view = view
         self.rocketId = rocketId
+        
+        guard let coreDataStack: CoreDataStackProtocol = ServiceLocator.shared.resolve() else {
+            return
+        }
+        self.coreDataStack = coreDataStack
+        
+        self.launches = coreDataStack.fetch(fetchRequest: fetchRequesst)
+        
         downloadLaunches()
     }
     
     private func downloadLaunches() {
-        guard let url = URL(string: "https://api.spacexdata.com/v4/launches") else { return }
+        guard let url = URL(string: Constants.launchesStringURL) else { return }
         
         let networkService = NetworkingService()
         networkService.fetchFromUrl(url: url) { [weak self] data in
-            self?.coreDataStack.performSave() { context in
+            guard let coreDataStack = self?.coreDataStack else {
+                return
+            }
+            coreDataStack.performSave() { context in
                 let decoder = JSONDecoder()
                 decoder.userInfo[CodingUserInfoKey.context!] = context
                 do {
@@ -34,14 +54,10 @@ final class LaunchesPresenter: LaunchesPresenterProtocol {
                     print(error.localizedDescription)
                 }
             } successSave: {
-                let request: NSFetchRequest<DBLaunch> = DBLaunch.fetchRequest()
-                guard let id = self?.rocketId else {
+                guard let fetchRequesst = self?.fetchRequesst else {
                     return
                 }
-                let predicate = NSPredicate(format: "rocket == %@", id)
-                request.sortDescriptors = [NSSortDescriptor(key: #keyPath(DBLaunch.date), ascending: true)]
-                request.predicate = predicate
-                guard let dbLaunches = self?.coreDataStack.fetch(fetchRequest: request) else {
+                guard let dbLaunches = self?.coreDataStack?.fetch(fetchRequest: fetchRequesst) else {
                     return
                 }
                 self?.launches = dbLaunches

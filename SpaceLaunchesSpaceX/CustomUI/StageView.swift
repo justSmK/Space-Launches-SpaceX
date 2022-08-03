@@ -13,7 +13,7 @@ class StageView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.textColor = .white
+        label.textColor = Constants.generalTextColor
         return label
     }()
     
@@ -21,7 +21,7 @@ class StageView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .gray
+        label.textColor = Constants.nameLabelTextColor
         label.text = "Количество двигателей"
         return label
     }()
@@ -30,7 +30,7 @@ class StageView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .gray
+        label.textColor = Constants.nameLabelTextColor
         label.text = "Количество топлива"
         return label
     }()
@@ -39,7 +39,7 @@ class StageView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .gray
+        label.textColor = Constants.nameLabelTextColor
         label.text = "Время сгорания"
         return label
     }()
@@ -48,7 +48,7 @@ class StageView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .gray
+        label.textColor = Constants.nameLabelTextColor
         label.text = "ton"
         return label
     }()
@@ -57,7 +57,7 @@ class StageView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .gray
+        label.textColor = Constants.nameLabelTextColor
         label.text = "sec"
         return label
     }()
@@ -66,7 +66,7 @@ class StageView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.textColor = .white
+        label.textColor = Constants.valueLabelTextColor
         return label
     }()
     
@@ -74,7 +74,7 @@ class StageView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.textColor = .white
+        label.textColor = Constants.valueLabelTextColor
         return label
     }()
     
@@ -82,7 +82,7 @@ class StageView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.textColor = .white
+        label.textColor = Constants.valueLabelTextColor
         return label
     }()
     

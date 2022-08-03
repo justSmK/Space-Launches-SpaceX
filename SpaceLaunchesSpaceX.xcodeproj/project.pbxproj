@@ -14,8 +14,6 @@
 		BB70614C28950E0400DABC42 /* NetworkingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70614B28950E0400DABC42 /* NetworkingServiceProtocol.swift */; };
 		BB70615228950EAE00DABC42 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70615128950EAE00DABC42 /* NetworkingService.swift */; };
 		BB7061562895101A00DABC42 /* LaunchesPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7061552895101A00DABC42 /* LaunchesPresenterProtocol.swift */; };
-		BB70615A2895107200DABC42 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7061592895107200DABC42 /* Launch.swift */; };
-		BB70615C289510B200DABC42 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70615B289510B200DABC42 /* Rocket.swift */; };
 		BB706161289512AB00DABC42 /* LaunchesViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB706160289512AB00DABC42 /* LaunchesViewProtocol.swift */; };
 		BB706163289512E000DABC42 /* RocketsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB706162289512E000DABC42 /* RocketsViewProtocol.swift */; };
 		BB7061652895136700DABC42 /* LaunchesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7061642895136700DABC42 /* LaunchesPresenter.swift */; };
@@ -36,7 +34,6 @@
 		BBB9A6EE289A675200218B89 /* SettingsServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A6ED289A675200218B89 /* SettingsServiceDelegate.swift */; };
 		BBB9A6F0289A679C00218B89 /* SettingsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A6EF289A679C00218B89 /* SettingsEnum.swift */; };
 		BBB9A6F2289A683C00218B89 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A6F1289A683C00218B89 /* SettingsService.swift */; };
-		BBB9A6F4289A7E8400218B89 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A6F3289A7E8400218B89 /* SettingsTableViewCell.swift */; };
 		BBB9A6F6289A80AF00218B89 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB9A6F5289A80AF00218B89 /* SettingsViewController.xib */; };
 		BBB9A6FA289A81DC00218B89 /* DBLaunchCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A6F9289A81DC00218B89 /* DBLaunchCoreData.swift */; };
 		BBB9A6FD289A845300218B89 /* SpaceXDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A6FB289A845300218B89 /* SpaceXDataModel.xcdatamodeld */; };
@@ -48,6 +45,8 @@
 		BBB9A70A289A869D00218B89 /* DBPayloadCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A709289A869D00218B89 /* DBPayloadCoreData.swift */; };
 		BBB9A70C289A86C000218B89 /* DBRocketCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A70B289A86C000218B89 /* DBRocketCoreData.swift */; };
 		BBB9A70E289A86EA00218B89 /* DBSecondStageCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A70D289A86EA00218B89 /* DBSecondStageCoreData.swift */; };
+		BBB9A711289A955500218B89 /* CoreDataStackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A710289A955500218B89 /* CoreDataStackProtocol.swift */; };
+		BBB9A713289A95C100218B89 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9A712289A95C100218B89 /* Constants.swift */; };
 		BBBA135328704C85000E4FC2 /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA135228704C85000E4FC2 /* LaunchesViewController.swift */; };
 		BBBA1356287056A7000E4FC2 /* LaunchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA1355287056A7000E4FC2 /* LaunchesTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -62,8 +61,6 @@
 		BB70614B28950E0400DABC42 /* NetworkingServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceProtocol.swift; sourceTree = "<group>"; };
 		BB70615128950EAE00DABC42 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		BB7061552895101A00DABC42 /* LaunchesPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesPresenterProtocol.swift; sourceTree = "<group>"; };
-		BB7061592895107200DABC42 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
-		BB70615B289510B200DABC42 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 		BB706160289512AB00DABC42 /* LaunchesViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewProtocol.swift; sourceTree = "<group>"; };
 		BB706162289512E000DABC42 /* RocketsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsViewProtocol.swift; sourceTree = "<group>"; };
 		BB7061642895136700DABC42 /* LaunchesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesPresenter.swift; sourceTree = "<group>"; };
@@ -72,7 +69,6 @@
 		BB79E00D27E489F700043380 /* RocketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsViewController.swift; sourceTree = "<group>"; };
 		BB79E01227E489F800043380 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB79E01527E489F800043380 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BB79E01727E489F800043380 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB9E190D28955EFC00D2C3E3 /* RocketsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsPresenterProtocol.swift; sourceTree = "<group>"; };
 		BB9E190F28955FE000D2C3E3 /* RocketsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsPresenter.swift; sourceTree = "<group>"; };
 		BBB9A6D8289A614600218B89 /* SettingsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewProtocol.swift; sourceTree = "<group>"; };
@@ -86,7 +82,6 @@
 		BBB9A6ED289A675200218B89 /* SettingsServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsServiceDelegate.swift; sourceTree = "<group>"; };
 		BBB9A6EF289A679C00218B89 /* SettingsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEnum.swift; sourceTree = "<group>"; };
 		BBB9A6F1289A683C00218B89 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
-		BBB9A6F3289A7E8400218B89 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		BBB9A6F5289A80AF00218B89 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		BBB9A6F9289A81DC00218B89 /* DBLaunchCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBLaunchCoreData.swift; sourceTree = "<group>"; };
 		BBB9A6FC289A845300218B89 /* SpaceXDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpaceXDataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -98,6 +93,9 @@
 		BBB9A709289A869D00218B89 /* DBPayloadCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBPayloadCoreData.swift; sourceTree = "<group>"; };
 		BBB9A70B289A86C000218B89 /* DBRocketCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRocketCoreData.swift; sourceTree = "<group>"; };
 		BBB9A70D289A86EA00218B89 /* DBSecondStageCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSecondStageCoreData.swift; sourceTree = "<group>"; };
+		BBB9A710289A955500218B89 /* CoreDataStackProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackProtocol.swift; sourceTree = "<group>"; };
+		BBB9A712289A95C100218B89 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BBB9A716289A9B6500218B89 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBBA135228704C85000E4FC2 /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
 		BBBA1355287056A7000E4FC2 /* LaunchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,15 +149,6 @@
 			path = RocketsPresenter;
 			sourceTree = "<group>";
 		};
-		BB7061582895105F00DABC42 /* Structs */ = {
-			isa = PBXGroup;
-			children = (
-				BB7061592895107200DABC42 /* Launch.swift */,
-				BB70615B289510B200DABC42 /* Rocket.swift */,
-			);
-			path = Structs;
-			sourceTree = "<group>";
-		};
 		BB70615D2895125600DABC42 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,14 +199,14 @@
 			isa = PBXGroup;
 			children = (
 				BB79E00927E489F700043380 /* AppDelegate.swift */,
+				BBB9A712289A95C100218B89 /* Constants.swift */,
 				BB79E01227E489F800043380 /* Assets.xcassets */,
+				BBB9A716289A9B6500218B89 /* Info.plist */,
 				BBB9A6F7289A81A000218B89 /* CoreDataObjects */,
 				BBBA134F28702A60000E4FC2 /* CustomUI */,
-				BB79E01727E489F800043380 /* Info.plist */,
 				BB79E01427E489F800043380 /* LaunchScreen.storyboard */,
 				BB70615328950FEB00DABC42 /* Presentation */,
 				BBB9A6E1289A664300218B89 /* ServicesLayer */,
-				BB7061582895105F00DABC42 /* Structs */,
 				BB70615D2895125600DABC42 /* View */,
 			);
 			path = SpaceLaunchesSpaceX;
@@ -245,12 +234,11 @@
 		BBB9A6E1289A664300218B89 /* ServicesLayer */ = {
 			isa = PBXGroup;
 			children = (
-				BBB9A6FB289A845300218B89 /* SpaceXDataModel.xcdatamodeld */,
+				BBB9A70F289A953B00218B89 /* CoreData */,
 				BBB9A6E6289A668500218B89 /* UserDefaultsService */,
 				BBB9A6E5289A667C00218B89 /* SettingsService */,
 				BBB9A6E2289A665300218B89 /* NetworkService */,
 				BBB9A6E3289A667400218B89 /* ServiceLocator.swift */,
-				BBB9A6FE289A859800218B89 /* CoreDataStack.swift */,
 			);
 			path = ServicesLayer;
 			sourceTree = "<group>";
@@ -315,6 +303,16 @@
 			path = DBRocket;
 			sourceTree = "<group>";
 		};
+		BBB9A70F289A953B00218B89 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				BBB9A6FB289A845300218B89 /* SpaceXDataModel.xcdatamodeld */,
+				BBB9A710289A955500218B89 /* CoreDataStackProtocol.swift */,
+				BBB9A6FE289A859800218B89 /* CoreDataStack.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		BBBA134F28702A60000E4FC2 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,7 +336,6 @@
 			isa = PBXGroup;
 			children = (
 				BBBA1355287056A7000E4FC2 /* LaunchesTableViewCell.swift */,
-				BBB9A6F3289A7E8400218B89 /* SettingsTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -476,19 +473,18 @@
 				BB29AECB286CA77100E67CDF /* StageView.swift in Sources */,
 				BBB9A6DB289A61E100218B89 /* SettingsViewController.swift in Sources */,
 				BBB9A6FF289A859800218B89 /* CoreDataStack.swift in Sources */,
-				BB70615C289510B200DABC42 /* Rocket.swift in Sources */,
 				BB9E191028955FE000D2C3E3 /* RocketsPresenter.swift in Sources */,
 				BB7061652895136700DABC42 /* LaunchesPresenter.swift in Sources */,
-				BB70615A2895107200DABC42 /* Launch.swift in Sources */,
 				BBBA135328704C85000E4FC2 /* LaunchesViewController.swift in Sources */,
 				BB70615228950EAE00DABC42 /* NetworkingService.swift in Sources */,
 				BBB9A702289A860400218B89 /* DBDiameterCoreData.swift in Sources */,
+				BBB9A711289A955500218B89 /* CoreDataStackProtocol.swift in Sources */,
 				BBB9A706289A866700218B89 /* DBHeightCoreData.swift in Sources */,
 				BBB9A6FA289A81DC00218B89 /* DBLaunchCoreData.swift in Sources */,
 				BBB9A6EA289A66D000218B89 /* UserDefaultsService.swift in Sources */,
 				BBB9A6EC289A672C00218B89 /* SettingsServiceProtocol.swift in Sources */,
-				BBB9A6F4289A7E8400218B89 /* SettingsTableViewCell.swift in Sources */,
 				BB79E00A27E489F700043380 /* AppDelegate.swift in Sources */,
+				BBB9A713289A95C100218B89 /* Constants.swift in Sources */,
 				BBB9A704289A864B00218B89 /* DBFirstStageCoreData.swift in Sources */,
 				BBB9A6DE289A658A00218B89 /* SettingsPresenterProtocol.swift in Sources */,
 				BBB9A6E8289A669E00218B89 /* UserDefaultsServiceProtocol.swift in Sources */,

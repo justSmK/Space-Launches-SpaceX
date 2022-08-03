@@ -10,6 +10,10 @@ import UIKit
 
 class SettingsViewController: UIViewController, SettingsViewProtocol {
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     var presenter: SettingsPresenterProtocol?
     
     @IBOutlet weak var heightSegmentedControl: UISegmentedControl!

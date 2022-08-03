@@ -12,12 +12,10 @@ final class RocketsPresenter: RocketsPresenterProtocol {
     weak var view: RocketsViewProtocol?
     private var rockets: [DBRocket] = [DBRocket]()
     private var settingsService: SettingsServiceProtocol?
-    private let coreDataStack = CoreDataStack()
+    private var coreDataStack: CoreDataStackProtocol?
     
     init(view: RocketsViewProtocol) {
         self.view = view
-        self.rockets = coreDataStack.fetch(fetchRequest: DBRocket.fetchRequest())
-        downloadRockets()
         
         guard let service: SettingsServiceProtocol = ServiceLocator.shared.resolve() else {
             return
@@ -25,14 +23,24 @@ final class RocketsPresenter: RocketsPresenterProtocol {
         
         settingsService = service
         settingsService?.delegate = self
+        
+        guard let coreDataStack: CoreDataStackProtocol = ServiceLocator.shared.resolve() else {
+            return
+        }
+        self.coreDataStack = coreDataStack
+        self.rockets = coreDataStack.fetch(fetchRequest: DBRocket.fetchRequest())
+        
+        downloadRockets()
     }
     
     private func downloadRockets() {
-        guard let url = URL(string: "https://api.spacexdata.com/v4/rockets") else { return }
+        guard let url = URL(string: Constants.rocketsStringURL) else { return }
         let networkService = NetworkingService()
         networkService.fetchFromUrl(url: url) { [weak self] data in
-            
-            self?.coreDataStack.performSave() { context in
+            guard let coreDataStack = self?.coreDataStack else {
+                return
+            }
+            coreDataStack.performSave() { context in
                 let decoder = JSONDecoder()
                 decoder.userInfo[CodingUserInfoKey.context!] = context
                 
@@ -42,7 +50,7 @@ final class RocketsPresenter: RocketsPresenterProtocol {
                     print(error.localizedDescription)
                 }
             } successSave: {
-                guard let dbRockets = self?.coreDataStack.fetch(fetchRequest: DBRocket.fetchRequest()) else {
+                guard let dbRockets = self?.coreDataStack?.fetch(fetchRequest: DBRocket.fetchRequest()) else {
                     return
                 }
                 self?.rockets = dbRockets
@@ -120,9 +128,9 @@ final class RocketsPresenter: RocketsPresenterProtocol {
     
     private func configuratePayload(rocket index: Int) -> (value: String, name: String) {
         guard let payloads = rockets[index].payloads?.allObjects as? [DBPayload] else {
-            return (value: "", name: "Высота, ft")
+            return (value: "", name: "Нагрузка, ft")
         }
-        if payloads.isEmpty { return (value: "", name: "Высота, ft") }
+        if payloads.isEmpty { return (value: "", name: "Нагрузка, ft") }
         guard let service = settingsService else {
             return (value: String(payloads[0].kg), name: "Нагрузка, kg")
         }

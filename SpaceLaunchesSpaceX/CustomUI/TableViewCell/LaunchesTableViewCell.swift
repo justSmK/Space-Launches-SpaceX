@@ -15,7 +15,7 @@ class LaunchesTableViewCell: UITableViewCell {
     private lazy var launchCellView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = #colorLiteral(red: 0.1058690324, green: 0.1058908626, blue: 0.105864279, alpha: 1)
+        view.backgroundColor = Constants.cellBackgroundColor
         view.layer.cornerRadius = 30
         return view
     }()
@@ -23,7 +23,7 @@ class LaunchesTableViewCell: UITableViewCell {
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .white
+        label.textColor = Constants.generalTextColor
         label.lineBreakMode = .byTruncatingTail
         label.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         return label
@@ -32,7 +32,7 @@ class LaunchesTableViewCell: UITableViewCell {
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .gray
+        label.textColor = Constants.nameLabelTextColor
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         return label
     }()
@@ -46,12 +46,6 @@ class LaunchesTableViewCell: UITableViewCell {
     func configurate(name: String, date: String, isSuccess: Bool) {
         
         launchIconImageView.image = isSuccess ? UIImage(named: "successLaunch") : UIImage(named: "failedLaunch")
-        
-        //        if isSuccess {
-        //            launchIconImageView.image = UIImage(named: "successLaunch")
-        //        } else {
-        //            launchIconImageView.image = UIImage(named: "failedLaunch")
-        //        }
         
         contentView.backgroundColor = .black
         nameLabel.text = name

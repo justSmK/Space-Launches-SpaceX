@@ -21,11 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
-        let service: SettingsServiceProtocol = SettingsService()
-        ServiceLocator.shared.register(service: service)
+        registerDepenencies()
         
         return true
     }
     
+    private func registerDepenencies() {
+        let settingsService: SettingsServiceProtocol = SettingsService()
+        ServiceLocator.shared.register(service: settingsService)
+        let coreDataStack: CoreDataStackProtocol = CoreDataStack()
+        ServiceLocator.shared.register(service: coreDataStack)
+    }
 }
 

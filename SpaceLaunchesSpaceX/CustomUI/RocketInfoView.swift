@@ -13,7 +13,7 @@ class RocketInfoView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .white
+        label.textColor = Constants.nameLabelTextColor
         label.text = "Первый запуск"
         return label
     }()
@@ -22,7 +22,7 @@ class RocketInfoView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .white
+        label.textColor = Constants.nameLabelTextColor
         label.text = "Страна"
         return label
     }()
@@ -31,7 +31,7 @@ class RocketInfoView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .white
+        label.textColor = Constants.nameLabelTextColor
         label.text = "Стоимость запуска"
         return label
     }()
@@ -40,7 +40,7 @@ class RocketInfoView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .gray
+        label.textColor = Constants.valueLabelTextColor
         return label
     }()
     
@@ -48,7 +48,8 @@ class RocketInfoView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .gray
+        label.textColor = Constants.valueLabelTextColor
+        label.lineBreakMode = .byTruncatingTail
         return label
     }()
     
@@ -56,7 +57,7 @@ class RocketInfoView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .gray
+        label.textColor = Constants.valueLabelTextColor
         return label
     }()
     
@@ -130,6 +131,7 @@ extension RocketInfoView {
         
         countryRowView.addSubview(countryValueLabel)
         NSLayoutConstraint.activate([
+            countryValueLabel.leadingAnchor.constraint(greaterThanOrEqualTo: countryLabel.trailingAnchor, constant: 20),
             countryValueLabel.trailingAnchor.constraint(equalTo: countryRowView.trailingAnchor, constant: -10),
             countryValueLabel.centerYAnchor.constraint(equalTo: countryRowView.centerYAnchor),
         ])

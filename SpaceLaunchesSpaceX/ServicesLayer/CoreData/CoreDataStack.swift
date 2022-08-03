@@ -8,12 +8,12 @@
 import Foundation
 import CoreData
 
-final class CoreDataStack {
+final class CoreDataStack: CoreDataStackProtocol {
     
-    var viewContext: NSManagedObjectContext {
+    private var viewContext: NSManagedObjectContext {
         container.viewContext
     }
-    var backgroundContext: NSManagedObjectContext {
+    private var backgroundContext: NSManagedObjectContext {
         container.newBackgroundContext()
     }
     

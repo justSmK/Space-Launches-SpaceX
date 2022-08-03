@@ -24,6 +24,10 @@ public struct UsesAutoLayout<T: UIView> {
 
 class RocketsViewController: UIViewController, RocketsViewProtocol {
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     // MARK: - Properties
     
     var presenter: RocketsPresenterProtocol?
@@ -34,7 +38,7 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.isUserInteractionEnabled = true
         scrollView.isScrollEnabled = true
-        scrollView.backgroundColor = .black
+        scrollView.backgroundColor = Constants.backgroundColor
         return scrollView
     }()
     
@@ -50,7 +54,7 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
     private lazy var headerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .black
+        view.backgroundColor = Constants.backgroundColor
         view.layer.cornerRadius = 20
         return view
     }()
@@ -60,7 +64,7 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 24, weight: .medium)
-        label.textColor = .white
+        label.textColor = Constants.generalTextColor
         label.text = "Rocket"
         return label
     }()
@@ -71,7 +75,7 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.contentVerticalAlignment = .fill
         button.contentHorizontalAlignment = .fill
-        button.tintColor = .gray
+        button.tintColor = Constants.nameLabelTextColor
         button.setImage(UIImage(systemName: "gearshape"), for: .normal)
         button.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
         return button
@@ -94,7 +98,7 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         //        collectionView.backgroundColor = .black
         collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
-        collectionView.backgroundColor = .black
+        collectionView.backgroundColor = Constants.backgroundColor
         return collectionView
     }()
     
@@ -123,7 +127,7 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
     private lazy var launchesButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = #colorLiteral(red: 0.1058690324, green: 0.1058908626, blue: 0.105864279, alpha: 1)
+        button.backgroundColor = Constants.cellBackgroundColor
         button.setTitle("Посмотреть запуски", for: .normal)
         button.tintColor = .white
         button.layer.cornerRadius = 15
@@ -145,7 +149,7 @@ class RocketsViewController: UIViewController, RocketsViewProtocol {
         let pageControl = UIPageControl()
         pageControl.numberOfPages = 2
         pageControl.translatesAutoresizingMaskIntoConstraints = false
-        pageControl.backgroundColor = #colorLiteral(red: 0.03920789436, green: 0.03922066465, blue: 0.03920510784, alpha: 1)
+        pageControl.backgroundColor = Constants.pageControlBackgroundColor
         pageControl.addTarget(self, action: #selector(pageDidChange), for: .valueChanged)
         return pageControl
     }()
